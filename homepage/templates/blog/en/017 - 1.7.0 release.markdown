@@ -1,0 +1,48 @@
+
+---
+tags: release, mapproxy
+date: 2014/07/07 16:45:00
+format: markdown
+title: New MapProxy 1.7.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.7.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.7.0/>
+
+### New features
+
+Some noteworthy improvements since 1.6.0 are:
+
+
+#### New autoconf tool
+
+There is a new autoconf tool that is able to create MapProxy configurations
+based on existing WMS services. It reads WMS capabilities documents and creates
+sources and caches for all layers. It's a great way to get started with a new
+service.
+
+See: <http://mapproxy.org/docs/1.7.0/mapproxy_util_autoconfig.html>
+
+#### Improved error handling in mapproxy-seed
+
+Some services you need to seed are not as robust as you like. We improved `mapproxy-seed`
+to be more resilient with unstable sources. It prints more useful error messages and retries
+to request images for longer: seeding will not abort if a source is down for a few hours.
+
+
+#### Python 2.5
+
+MapProxy 1.7.0 is the last release with support for Python 2.5.
+
+#### Other fixes and changes
+
+There are many more changes and improvements.
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.7.0/CHANGES.txt>

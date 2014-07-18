@@ -1,0 +1,85 @@
+
+---
+tags: release, mapproxy
+date: 2011/03/03 11:11:11
+format: markdown
+title: New MapProxy 1.0.0 release
+---
+
+We are finally ready to announce the release of MapProxy 1.0.0. It
+contains lots of major and minor improvements.
+
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install -U --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.0.0/>
+
+
+#### Upgrade notes
+
+A bug, introduced in a previous release, prevented that the tile locks get
+removed. This issue is solved since 1.0.0b2 and MapProxy will remove existing
+lock files on the first access to the cache. This might take a while if the
+directory already contains a lot of lock files (probably thousands and more).
+
+We suggest that you remove the complete lock directories by hand before
+upgrading:
+
+    rm -r cache_dir/*/tile_locks
+
+
+### New features
+
+Some noteworthy improvements are:
+
+#### mapproxy-seed
+
+
+mapproxy-seed got a new, flexible configuration format (the old format is
+still supported). You can now define multiple seed and cleanup tasks and call
+each separately from the command line interface (``--seed`` and ``--cleanup``
+options).
+
+It is now possible to reseed specific areas without triggering any cleanup.
+
+There are also two new ``--summary`` and ``--interactive`` options that help
+to understand what the seed tool will do.
+
+See: <http://mapproxy.org/docs/1.0.0/seed.html>
+
+#### FeatureInfo XSL transformations
+
+MapProxy now supports content aware merging of multiple HTML/XML
+feature responses and it supports XSL transformations.
+See:  <http://mapproxy.org/docs/1.0.0/configuration_examples.html#featureinformation>
+
+#### Image manipulation
+
+You can now make non-transparent layers transparent.
+Either with an opacity value, with blends the layer over the others,
+or with a color value that should be converted to transparent.
+See: <http://mapproxy.org/docs/1.0.0/sources.html#image-transparent-color>
+
+#### Authentication
+
+There is a new powerful authentication interface.
+See: <http://mapproxy.org/docs/1.0.0/auth.html>
+
+
+#### Changelog
+
+For a more complete list see: <http://bitbucket.org/olt/mapproxy/src/1.0.0/CHANGES.txt>
+
+
+## Final note
+
+We also like to use this announcement to say thank you to the ever growing
+community. To everyone that helped funding the many new features and to
+everyone that offered help, gave feedback or talked/blogged/tweeted about
+MapProxy.
+
+Thank you!

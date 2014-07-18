@@ -1,0 +1,63 @@
+
+---
+tags: release, mapproxy
+date: 2012/01/13 14:00:00
+format: markdown
+title: New MapProxy 1.3.0 release
+---
+
+We are ready to announce the release of MapProxy 1.3.0. It
+contains major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.3.0/>
+
+## New features
+
+Some noteworthy improvements since 1.2.0 are:
+
+
+#### RESTful WMTS
+
+The MapProxy WMTS now also supports the RESTful API. This service
+also supports custom URL templates for your service.
+
+See [WMTS configuration](http://mapproxy.org/docs/nightly/services.html#restful).
+
+#### CouchDB cache backend
+
+You can now use a CouchDB as a backend for tile caches.
+Each cache gets stored into a separate database and you can
+configure the layout of the URLs of each tile. You can also
+add additional metadata for each tile.
+
+<!-- With the help of custom CouchDB tile IDs and the RESTful WMTS, you can create a MapProxy and CouchDB setup where all tiles share the same URL path (like ``/mycache/MyGrid-5-2-5/tile``). -->
+
+See [CouchDB configuration](http://mapproxy.org/docs/nightly/caches.html#couchdb).
+
+
+#### `mapproxy-util serve-multiapp-develop` tool
+
+The new command is similar to `serve-develop` but it starts a
+MultiMapProxy instance.
+
+See [mapproxy-util documentation](http://mapproxy.org/docs/nightly/mapproxy_util.html#serve-multiapp-develop).
+
+#### Other features
+
+- [Mapnik source now supports Mapnik 2.](http://mapproxy.org/docs/nightly/sources.html#mapnik)
+
+- You can limit the [maximum WMS response size in pixels with max_output_pixels](http://mapproxy.org/docs/nightly/services.html#max-output-pixels).
+
+- You can configure additional SRS for which MapProxy should [add bounding
+ boxes to the WMS capabilities with the new wms.bbox_srs option](http://mapproxy.org/docs/nightly/services.html#bbox-srs).
+
+#### Changelog
+
+For a complete list of changes see:
+<http://bitbucket.org/olt/mapproxy/src/1.3.0/CHANGES.txt>

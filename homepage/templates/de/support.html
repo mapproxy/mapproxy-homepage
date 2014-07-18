@@ -1,0 +1,103 @@
+{% extends "base/index.html" %}
+{% block title %}
+Support
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12">
+    {{ heading('Support') }}
+  </div>
+</div>
+
+<div class="row content-row">
+  <div class="col-md-8">
+    <p>Brauchen Sie Hilfe bei der Installieren oder beim Einrichten von MapProxy? Oder haben Sie einen Bug gefunden? Es gibt unterschiedliche Wege um Hilfe zubekommen:</p>
+
+    <h3>Kommerzielle Unterstützung</h3>
+    <p>MapProxy wurde im März 2010 von <a href="http://www.omniscale.de">Omniscale</a> als Open-Source-Software veröffentlicht und wird seitdem aktiv von <a href="http://www.omniscale.de">Omniscale</a> betreut und weiterentwickelt.</p>
+
+    <p><a href="http://www.omniscale.de">Omniscale</a> bietet ein breites Spektrum von kommerzieller Unterstützung rund um das Thema MapProxy an. Hierzu gehört zum Beispiel die Weiterentwicklung, die Unterstützung bei Konfiguration und Einrichtung sowie die Durchführung individueller Workshops.</p>
+
+    <h4>Weiterentwicklung</h4>
+    <p>Die Weiterentwicklung von MapProxy führt Omniscale im Auftrag von Kunden oder im Rahmen von Projekten durch. Wenn MapProxy für Ihren Einsatzzweck noch eine Funktion benötigt, wenden Sie sich einfach an Omniscale. Anschließend fließt die neue Funktion dann zurück in das MapProxy-Projekt.</p>
+
+    <p class="image-right">
+      <img src="/static/img/venn_support.png" width="300" height="291" alt="" class="img-responsive">
+    </p>
+
+    <h4>Support</h4>
+    <p>Omniscale unterstützt Sie bei der Konfiguration, der Einrichtung und während des Produktivbetriebs Ihrer MapProxy Installation. Der hohe Funktionsumfang von MapProxy ermöglicht eine Vielzahl von Einstellungen und Optimierungen. Profitieren Sie direkt vom Know-How der Entwickler.</p>
+
+    <p>Auch in einer Software mit über 1000 Systemtests können Fehler auftreten. Als Omniscale Supportkunde haben Ihre Meldungen Priorität und werden bevorzugt behandelt. Bei Bedarf können kurzfristige Workarounds und neue MapProxy-Releases erstellt werden.</p>
+
+    <p>Die Ansprüche an Support sind sehr unterschiedlich. Omniscale bietet daher unterschiedliche Supportpakete für unterschiedliche Einsatzzwecke an. Neben dem Support via Telefon und E-Mail ist so zum Beispiel auch eine Unterstützung mittels Webkonferenz möglich.</p>
+
+    <h4>Individuelle Workshops</h4>
+    <p>Jeder Aufgabenbereich von MapProxy ist anders. Damit Sie MapProxy verstehen und konfigurieren können bietet <a href="http://www.omniscale.de">Omniscale</a> individuell angepasste Workshops an. Der Inhalt richtet sich direkt an die vorhandenen Problemstellungen und wird an die technischen Vorraussetzungen angepasst. Lernen Sie zum Beispiel in einem zweitätigen Workshop, wie Sie Ihre GDI beschleunigen und Ihre Daten abgesichert anbieten können.</p>
+    <p>Sie haben Interesse an Weiterentwicklung, Support oder einem Workshops? Dann <a href="http://www.omniscale.de/contact">kontaktieren Sie Omniscale</a>.</p>
+    <hr>
+  </div>
+</div>
+
+
+<div class="row content-row">
+  <div class="col-md-8">
+    <h3>Community Support</h3>
+    <p>Wie für ein Open Source Projekt üblich, gibt es neben dem kommerziellen Support, auch die Möglichkeit seine Fragen an die MapProxy-Community zu stellen. Hierzu stehen Ihnen verschiedene Wege zur Verfügung.</p>
+
+    <h4>Mailingliste</h4>
+    <p>MapProxy verfügt – wie viele Open-Source-Projekte – über eine <strong>englischsprachige Mailingliste</strong>. Die MapProxy Mailingliste wird von der <a href="http://osgeo.org">OSGeo</a> bereitgestellt: <a href="http://lists.osgeo.org/mailman/listinfo/mapproxy">mapproxy@lists.osgeo.org</a></p>
+
+    <p>Die Mailingliste ist für Benutzer und Entwickler geeignet und ist der beste Ort um über MapProxy zu diskutieren. Damit Sie Beiträge auf der Mailingliste schreiben können, müssen Sie sich zuvor an der <a href="http://lists.osgeo.org/mailman/listinfo/mapproxy">Mailingliste anmelden</a>.</p>
+
+    <p>Zudem verfügt die Mailingliste über ein <a href="http://lists.osgeo.org/pipermail/mapproxy/">Archiv</a> in dem alle alten Beiträge archiviert werden. Oft finden sich hier bereits Lösungen für bestehende Probleme oder Fragen.</p>
+
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              Wie stelle ich eine Frage auf der Mailingliste?
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Um eine größtmögliche Anzahl von Benutzern zu erreichen und allen die Möglichkeit zu geben eine Frage zu stellen ist die MapProxy Mailingliste <em>englischsprachig</em>.</p>
+
+            <p>Damit Sie eine <em>hilfreiche</em> Antwort bekommen, sollten Sie einige Punkte beachten:</p>
+            <ul>
+              <li>Beschreiben Sie was Sie versuchen und was für ein Ergebnis Sie erwarten. Vielleicht gibt es einen einfacheren Weg um ans Ziel zu kommen.</li>
+
+              <li>Fügen Sie immer ein Minimalbeispiel Ihrer Konfiguration ein. Nur so können Ihre Einstellungen einfach reproduziert werden. Binden Sie hierfür z.B. alle Grids, Caches, Sources und Layer ein und entfernen Sie unnötigen Code.</li>
+
+              <li>Beschreiben Sie welches Ergebnis Sie erwarten und welches Ergebnis Sie erhalten. Fügen Sie URLs von Anfragen an MapProxy und Anfragen von MapProxy hinzu.</li>
+
+              <li>Beschreiben Sie was Sie bereits ausprobiert haben.</li>
+
+              <li>Fügen Sie hinzu welches Setup/Deployment und welche Versionen Sie verwenden (MapProxy, Windows/Linux, Proj4, Pil, Webserver etc.)</li>
+
+              <li>Probieren Sie ob Ihre MapProxy-Konfigurationsdatei mit `mapproxy-util serve-develop` ausgeführt werden kann oder ob der Fehler erst beim Deployment auftritt. Kopieren Sie jegliche Fehlerbeschreibung in die Mail.</li>
+
+              <li>Die Mailingliste lässt nur E-Mails bis zu einer Größe von 100KB pro Mail zu. Vermeiden Sie daher HTML und posten Sie nur kleine Bilder oder verwenden Sie externen Webspace (z.B. Dropbox) für größere Beispieldateien.</li>
+
+              <li>Benutzen Sie diese Hinweise mit gesundem Menschenverstand. Zum Beispiel müssen Sie nicht Ihre OpenLayers-Konfiguration in die Mail einfügen wenn MapProxy nicht startet.</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h4>IRC</h4>
+    <p>Auch über den Internet Relay Chat (IRC) besteht die Möglichkeit Kontakt herzustellen. MapProxy hat einen IRC Raum auf irc.freenode.net: <a href="irc://irc.freenode.net/%23mapproxy">#mapproxy</a>. Bitte beachten Sie jedoch, dass sich hier nicht immer ein Entwickler aufhält.</p>
+
+    <h4>Issue Tracker</h4>
+    <p>Sie haben einen Bug gefunden oder haben den Wunsch nach einer bestimmten Funktion? Für diesen Fall haben wir einen so genannten <a href="https://github.com/mapproxy/mapproxy/issues">Issue Tracker</a>. Hier können Sie schnell und einfach neue Tickets erstellen und Ihre Probleme und Ihre Wünsche melden. Mehr Informationen dazu finden Sie auch im Bereich <a href="/entwicklung">Entwicklung</a>
+    </p>
+
+  </div>
+</div>
+{% endblock %}

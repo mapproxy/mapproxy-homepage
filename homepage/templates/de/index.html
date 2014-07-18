@@ -1,0 +1,167 @@
+{% extends "base/index.html" %}
+
+{% block title %}
+WMS- & Kachelproxy
+{% endblock %}
+
+{% block content %}
+<div class="row top-buffer-1">
+  <div class="col-md-7">
+    {{ heading('MapProxy')}}
+    <p>Die Open-Source-Software MapProxy ist ein WMS- & Kachel-Proxy mit der Kartendienste, durch Vorgenerieren und Zwischenspeichern, beschleunigt und optimiert werden können.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <img src="{{ url_for('static', filename='img/mapproxy-overview.png') }}" alt="MapProxy" class="img-responsive">
+  </div>
+</div>
+
+<div class="row top-buffer-3">
+  <div class="col-md-12">
+    {{ heading('Ausgewählte <span class="normal">Funktionen</span>',
+    'Profitieren Sie von den vielfälltigen Einsatzmöglichkeiten von MapProxy'
+    ) }}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-5">
+    <h3 class="title colored">Kacheldienst</h3>
+    <p>MapProxy ist ein vollständig kompatibler WMS-Server und unterstützt so jeden WMS-Client, egal ob Desktop- oder Webgis</p>
+
+    <ul>
+      <li>WMS 1.0.0–1.3.0 (MapServer, GeoServer, etc.)</li>
+      <li>TMS, WMTS (TileCache, GeoWebcache, etc.)</li>
+      <li>Mapserver und Mapnik (direkt, ohne WMS)</li>
+      <li>jeder TileCache, Google Maps oder mit Bing kompatible Quellen</li>
+    </ul>
+    <h5>Weitere Funktionen:</h5>
+    <ul>
+      <li>speichern der Kacheln im Dateisystem, in MBTiles-Dateien oder in CouchDB</li>
+      <li>einheitliche Bilder werden nur einmalig gespeichert (z.B. blaue Wasserkacheln)</li>
+      <li>hinzufügen von Wasserzeichen</li>
+      <li>umtransformieren in andere Projektionen</li>
+      <li>zusammenfassen von mehrere Quellen zu einem Dienst</li>
+      <li>beschränken von Quellen über eine Geometrie (z.B. durch ein Shapefile)</li>
+      <li>und vieles mehr...</li>
+    </ul>
+
+  </div>
+
+  <div class="col-sm-6 col-md-offset-1 col-md-6">
+    <h3 class="title colored">WMS</h3>
+    <p>MapProxy ist ein vollständig kompatibler WMS-Server und unterstützt so jeden WMS-Client, egal ob Desktop oder Web. MapProxy unterstützt WMS Anfragen direkt oder aus dem Cache und kann:</p>
+
+    <ul>
+      <li>GetMap Anfragen aus Kacheln erstellen und so eine Unterstützung für freies Zoomen und für jede Projektion ermöglichen</li>
+      <li>bestehende WMS zwischen 10 und 100 mal beschleunigen</li>
+    </ul>
+
+    <h5>Kaskadierte WMS Dienste:</h5>
+    <ul>
+      <li>mehrere Quellen zu einem Dienst zusammenfassen</li>
+      <li>Transparenz zu undurchsichtigen Layern hinzufügen</li>
+      <li>Karten in andere Projektionen umtransformieren</li>
+      <li>MapProxy unterstützt zudem die Kombination aus gecachten und zusammengefassten Layern.</li>
+    </ul>
+
+    <h5>Weitere WMS Funktionen:</h5>
+    <ul>
+      <li>Beantworten von GetLegendGraphic Anfragen</li>
+      <li>GetFeatureInfo Anfragen zusammenfassen und optional mit XSL transformieren</li>
+      <li>Quellen über eine Geometrie beschränken werden (z.B. durch ein Shapefile)</li>
+      <li>WMS Versionen aktualisieren und Bild-Formate konvertieren</li>
+      <li>Unterstützung für Rasterdaten z.B. DEM</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<div class="row top-buffer-2">
+  <div class="col-md-8 feature">
+    <h3 class="title colored">Sicherheit</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 ">
+    <p>MapProxy kann als Sicherheitsschicht für vorhandene Kartendienste fungieren. So kann MapProxy gesamte WMS, aber auch einzelne Layer vor ungewollten Zugriffen schützen oder diese nur für bestimmte Nutzergruppen sichtbar machen.</p>
+    <p>Neben den Gesamtdaten kann die Sicherheitsschicht auch auf exakte Gebiete angewandt werden. So kann z.B. über ein Polygon definiert werden, auf welche Gebiete einzelne Benutzer zugreifen dürfen und auf welche nicht.</p>
+    <p>Die Sicherheitsschicht wurde als offene Schnittstelle entwickelt, damit sie an unterschiedlichste Nutzerdatenbanken angegliedert werden kann. Bereits bestehende Benutzerdatenbanken können so vom MapProxy verwendet werden.</p>
+  </div>
+  <div class="col-md-6">
+    <img src="{{ url_for('static', filename='img/auth_limited_to.png') }}" alt="MapProxy" class="img-responsive">
+  </div>
+</div>
+
+<hr>
+
+<div class="row top-buffer-2">
+
+  <div class="col-md-6">
+    <h3 class="title colored">Vorgenerieren</h3>
+    <p>Das Vorgenerieren eines Caches wird auch Seeding genannt. Für das performante Anbieten von Kartendiesten sollten die Kacheln der Dienste vorgeneriert werden. MapProxy verfügt daher über einige einzigartige Funktionen:</p>
+
+    <ul>
+      <li>fein einstellbare Beschränkung in welchem Bereich Karten vorgeneriert werden sollen durch die Angabe einer Geoemtrie als Shapefile, PostGIS oder im WKT-Format</li>
+      <li>optimierte Seeding Strategie</li>
+    </ul>
+
+  </div>
+
+  <div class="col-md-6">
+    <h3 class="title colored">Weitere Funktionen</h3>
+    <p>MapProxy kann auch dazu genutzt werden um Ihre GDI zu aktualisieren, ohne dass die bestehenden Server hierfür geändert werden müssen.</p>
+
+    <ul>
+      <li>einfaches aber mächtiges Konfigurationsformat (YAML/JSON)</li>
+      <li>Demo-Anwendung basierend auf OpenLayers</li>
+      <li>mehrere WMS-Dienste in einer MapProxy-Instanz</li>
+      <li>Wasserzeichen und Copyrightzeilen einfügen</li>
+      <li>und vieles mehr...</li>
+    </ul>
+
+    <h5>MapProxy unterstützt folgende offene Standards:</h5>
+    <ul>
+      <li>OGC WMS 1.0.0, 1.1.0, 1.1.1, 1.3.0</li>
+      <li>OGC WMTS 1.0.0 (KVP and RESTful)</li>
+      <li>OSGeo TMS 1.0.0</li>
+    </ul>
+
+  </div>
+</div>
+
+<hr>
+
+<div class="row top-buffer-2">
+  <div class="col-md-7">
+    <h3 class="title colored">Installation</h3>
+    <p>Neugierig geworden? MapProxy ist ganz einfach zu installieren.</p>
+    <p>Mit den Folgenden vier Befehlen können Sie MapProxy und alle benötigten Abhängigkeiten unter Linux (z.B. Ubuntu) installieren, eine Konfiguration erstellen und MapProxy im Entwicklermodus starten.</p>
+    <p>Ansclhießend können Sie das Ergebnis unter http://localhost:8080/ aufrufen.</p>
+
+    <pre><code>sudo aptitude install python-imaging python-yaml libproj0
+sudo easy_install mapproxy
+mapproxy-util create -t base-config ./
+mapproxy-util serve-develop ./mapproxy.yaml</pre></code>
+  </div>
+</div>
+
+<hr>
+
+<div class="row top-buffer-2">
+  <div class="col-md-12">
+    <h3 class="title colored">Demo</h3>
+    <p>In der unten eingebundenen OpenLayers-Kartenanwendung ist ein OpenStreetMap WMS beschleunigt durch MapProxy darstellt. Eine Vollbild Demo finden Sie hier: <a href="http://osm.omniscale.de">osm.omniscale.de</a></p>
+    <div id="map">
+      <noscript><p>Aktivieren Sie bitte JavaScript um die Karte zu sehen.</p></noscript>
+    </div>
+    <div id="attribution"></div>
+  </div>
+</div>
+{% endblock %}
+
+

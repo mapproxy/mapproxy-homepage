@@ -1,0 +1,54 @@
+
+---
+tags: release, mapproxy
+date: 2011/01/10 17:00:00
+format: markdown
+title: New MapProxy 0.9.1 release
+---
+
+We are finally ready to announce the release of MapProxy 0.9.1. It
+contains lots of major and minor improvements.
+
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install -U MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/0.9.1/>
+
+
+Some noteworthy improvements are:
+
+Coverage support
+----------------
+
+You can limit any tile/WMS source to the actual coverage of the data. The
+configuration is similar to the seeding tool. You can use a simple BBOX, WKT
+files or OGR datasources like Shapefiles to load the boundaries of your data.
+Requests for data outside of the coverage will result in empty images and the
+source will not be requested.
+
+See: <http://mapproxy.org/docs/0.9.1/coverages.html>
+
+WMS improvements
+----------------
+
+We added lots of new features to the WMS implementation of MapProxy. Some of them:
+
+* Nested [layer groups](http://mapproxy.org/docs/0.9.1/configuration.html#id1)
+* WMS 1.1.0 support
+* [GetLegendGraphic support](http://mapproxy.org/docs/0.9.1/sources.html#wms-opts)
+* [ScaleHint support](http://mapproxy.org/docs/0.9.1/configuration.html#min-res-max-res-or-min-scale-max-scale)
+* [SLD support for WMS sources](http://mapproxy.org/docs/0.9.1/configuration_examples.html#wms-sources-with-styled-layer-description-sld)
+
+MultiMapProxy
+-------------
+
+Use multiple MapProxy configurations in a single MapProxy instance: <http://mapproxy.org/docs/0.9.1/deployment.html#multimapproxy>
+
+Changelog
+---------
+
+For a more complete list see: <http://bitbucket.org/olt/mapproxy/src/0.9.1/CHANGES.txt>

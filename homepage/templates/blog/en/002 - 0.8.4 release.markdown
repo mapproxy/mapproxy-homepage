@@ -1,0 +1,33 @@
+
+---
+tags: release, mapproxy
+date: 2010/08/02 00:00:00
+format: markdown
+title: New MapProxy 0.8.4 release
+---
+
+We are proud to announce the release of MapProxy 0.8.4. Read on for
+more information.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --no-deps --upgrade 'MapProxy&lt;=0.8.99'
+
+Note: The '&lt;=0.8.99' prevents from installing 0.9 when it is released.
+
+Updated documentation is available at: <http://mapproxy.org/docs/0.8.4/>
+
+
+### Release information ###
+
+The 0.8.4 release contains minor bug fixes and improvements.
+
+Some of the features of the new release are:
+
+- Improved PNG performance with PIL fastpng branch.
+- New concurrent_requests option to limit requests for each
+source WMS server.
+- Extra newline at the end of all templates. Some deployment
+setups removed the last characters.

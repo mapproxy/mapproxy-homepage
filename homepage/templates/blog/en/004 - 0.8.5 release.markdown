@@ -1,0 +1,30 @@
+
+---
+tags: release, mapproxy
+date: 2010/09/02 00:00:00
+format: markdown
+title: New MapProxy 0.8.5 release
+---
+
+We are proud to announce the release of MapProxy 0.8.5. Read on for more information.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --no-deps --upgrade 'MapProxy<=0.8.99'
+
+Note: The '<=0.8.99' prevents from installing 0.9 when it is released.
+
+Updated documentation is available at: <http://mapproxy.org/docs/0.8.5/>
+
+### Release information ###
+
+The 0.8.5 release contains minor bug fixes and improvements.
+Some of the features of the new release are:
+
+  - mapproxy-seed:
+    - fixed libgdal loading on some Linux systems
+    - check for intersections with seed shapes on all levels
+    - add origin options to /tiles service to support Google Maps clients
+  - now Python 2.7 compatible (some tests failed before)

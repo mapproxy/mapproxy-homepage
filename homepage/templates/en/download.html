@@ -1,0 +1,63 @@
+{% extends "base/index.html" %}
+{% block title %}
+Download
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    {{ heading('Download') }}
+    <p>MapProxy releases are available from the <a href="http://pypi.python.org/pypi/MapProxy">PyPI project page of MapProxy</a>. There is also <a href="https://pypi.python.org/packages/source/M/MapProxy/">an archive of all official releases</a>, unofficial releases and pre-releases <a href="http://mapproxy.org/static/rel/">can be found here</a>.</p>
+
+    <p>However, downloading is often not necessary, because you can install MapProxy with the Python tools `easy_install` or `pip`. Read the <a href="http://mapproxy.org/docs/latest/install.html">installation instructions</a> for more information.</p>
+  </div>
+</div>
+
+<div class="row content-row">
+  <div class="col-md-8">
+    <h3>Releases</h3>
+
+    <p>1.x is the current mainline of the development. All new features will be included in the next 1.x release (1.3.x, 1.4.x, etc.). We will make minor releases (e.g. 1.2.1) with small improvements and bugfixes as necessary.</p>
+
+    <p>For changes between each release see the <a href="https://github.com/mapproxy/mapproxy/blob/master/CHANGES.txt">CHANGES.txt of MapProxy</a>.</p>
+
+    <h4>1.7.x</h4>
+    <p>This is the current release. It is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a>.</p>
+
+
+    To install the latest release:
+
+    <pre><code>pip install MapProxy</code></pre>
+
+    <h4>Previous releases</h4>
+    <p>You can install previous releases with pip if you specify the version with the package name. For example, to install MapProxy 1.1.1:</p>
+
+    <pre><code>pip install 'MapProxy==1.1.1'</code></pre>
+
+    <p>To install the latest version of the 1.2.x release, but not 1.3 or newer:</p>
+
+    <pre><code>pip install 'MapProxy<1.2.99'</code></pre>
+
+    <h4>1.1.x and newer</h4>
+    <p>These versions are released under the <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a>.</p>
+
+
+    <h4>1.0.x</h4>
+    <p>1.0.1 and all previous versions were released under the <a href="http://www.fsf.org/licensing/licenses/agpl-3.0.html">GNU AGPL License 3.0</a>.</p>
+
+    <p class="bs-callout bs-callout-warning">Please read the <a href="/blog/new-mapproxy-1.0.0-release"> upgrade notes if you are upgrading from 0.9.</a></p>
+
+    <h4> 0.9.x</h4>
+    <p class="bs-callout bs-callout-warning">The configuration format changed between 0.8.x and 0.9.x, so you have to make sure you configuration matches the <a href="http://mapproxy.org/docs/latest/migrate.html">new format</a> if you're going to upgrade.</p>
+
+    <h4>Nightly</h4>
+    <p>There are no nightly build packages, but you can directly install from the development trunk.</p>
+
+    <pre><code>pip install https://github.com/mapproxy/mapproxy/tarball/master</code></pre>
+    <p>The release branches are also available. For example:</p>
+
+    <pre><code>pip install https://github.com/mapproxy/mapproxy/tarball/1.4.x</code></pre>
+  </div>
+</div>
+{% endblock %}
+

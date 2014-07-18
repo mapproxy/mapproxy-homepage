@@ -1,0 +1,129 @@
+
+---
+tags: release, mapproxy
+date: 2011/05/31 10:40:00
+format: markdown
+title: New MapProxy 1.1.0 release
+---
+
+We are finally ready to announce the release of MapProxy 1.1.0. It
+contains lots of major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.1.0/>
+
+MapProxy 1.1.0 is the first version that is released under the [Apache
+Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). This
+replaces the old [GNU AGPL License](http://www.fsf.org/licensing/licenses/agpl-3.0.html) terms with a more open and liberal license.
+
+## New features
+
+Some noteworthy improvements since 1.0.0 are:
+
+#### New sources
+
+There are two new sources that directly integrate Mapserver and Mapnik
+into MapProxy. There is no need to setup an extra WMS server for these map
+services.
+
+See [MapServer source](http://mapproxy.org/docs/1.1.0/sources.html#mapserver-label) and [Mapnik source](http://mapproxy.org/docs/1.1.0/sources.html#mapnik-label) documentation.
+
+The tile source was extended by the ``arcgiscache_path`` and ``bbox``
+parameters. ``arcgiscache_path`` allows the integration of existing ArcGIS
+tile caches (L09/R05397fb1/C0012d687) and the ``bbox`` parameter is useful
+for WMS-C services that expect a fixed parameter order.
+
+See [tile source documentation](http://mapproxy.org/docs/1.1.0/sources.html#url>).
+
+#### Tagged WMS Sources
+
+You can tag WMS source names with layer names. It is no longer required to
+specify a WMS source multiple times, for each layer combination you use.
+You can now define a WMS once without any layers and then tag the source
+name with the layers you need.
+
+    sources:
+     wms1:
+      type: wms
+      req:
+        url: http://example.org/service?
+
+    caches:
+     mycache1:
+      sources: ['wms1:lyr1,lyr2']
+      grids: [mygrid]
+     mycache2:
+      sources: ['wms1:lyr3,lyr4']
+      grids: [mygrid]
+
+See [WMS documentation](http://mapproxy.org/docs/1.1.0/sources.html#tagged-source-names).
+
+#### Configurable Image Formats
+
+Image formats are now much more flexible. You can now create custom image
+formats and modify them for each source or cache individually. The
+configuration of paletted PNGs or the JPEG quality is no longer a global
+option.
+
+See [image options](http://mapproxy.org/docs/1.1.0/configuration.html#image-format-options).
+
+There is now also support for integer images, e.g. for DEMs.
+
+#### WMTS
+
+There is first support for the OGC WMTS standard. It implements KVP
+requests and can be used with existing caches.
+
+See [WMTS service documentation] (http://mapproxy.org/docs/1.1.0/services.html#web-map-tile-services).
+
+#### Improved logging
+
+The logging was improved and unified. System information is now logged at
+``mapproxy.system``, configuration errors at ``mapproxy.config`` and all
+source errors under ``mapproxy.source.wms``, etc.
+
+All requests that MapProxy makes are now logged to
+``mapproxy.source.request``. The request log format changed and it now
+contains the complete URL (easy to copy&paste), the size and the duration
+of the request. The log contains also requests to non-HTTP sources like
+Mapnik or Mapserver.
+
+See [deployment documentation](http://mapproxy.org/docs/1.1.0/deployment.html#logging).
+
+#### Improved configuration loading
+
+The configuration loading is now more robust. You shouldn't see any stack
+traces when your configuration contains any syntax errors. The MapProxy
+and the seed configurations are now validated and you should see detailed
+information about missing or unknown options.
+
+#### Cache location
+
+The default location of the cache will change with the next release (1.2). The
+current default is ``../var/cache_dir`` which is appropriate for the
+configuration from ``paster create``, but not for the configuration from
+``mapproxy-util create`` (see below). You should configure
+``globals.cache.base_dir`` with your cache directory. Until then you will get
+a FutureWarning during startup.
+
+#### New mapproxy-util command line tool
+
+There is a new mapproxy-util command that replaces the paster command for
+running the development server. You can now start a test server with:
+
+    mapproxy-util serve-develop mapproxy.yaml
+
+Paster (PasteDeploy/PasteScript) is no longer a requirement, but it is
+still supported.
+
+See [deployment documentation](http://mapproxy.org/docs/1.1.0/deployment.html).
+
+
+#### Changelog
+
+For a more complete list see: <http://bitbucket.org/olt/mapproxy/src/1.1.0/CHANGES.txt>

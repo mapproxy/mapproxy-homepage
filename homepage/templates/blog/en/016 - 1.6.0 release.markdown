@@ -1,0 +1,63 @@
+
+---
+tags: release, mapproxy
+date: 2013/09/05 11:00:00
+format: markdown
+title: New MapProxy 1.6.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.6.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.6.0/>
+
+### New features
+
+Some noteworthy improvements since 1.5.0 are:
+
+
+#### New decorate image API
+
+There is a new API to decorate or manipulate the images returned by MapProxy.
+It allows you to apply image filters or to add watermarks.
+The API is similar to the security API.
+
+See: <http://mapproxy.org/docs/1.6.0/decorate_img.html>
+
+#### New SQLite and Riak cache backends
+
+There are two new cache backends. Riak is a distributed key-value store
+that can be used to create high-available caches.
+The new SQLite cache is similar to MBTiles, but it adds timestamps for
+proper tile expiration and it uses one database file for each level.
+This makes it easy to remove complete levels without needing to VACUUM
+the database.
+
+See: <http://mapproxy.org/docs/1.6.0/caches.html>
+
+#### Improved image processing
+
+MapProxy now supports Pillow the successor of PIL. Pillow contains
+improvements in PNG encoding performance and support for alpha image
+composition, which improves overlays of multiple transparent layers.
+
+
+#### Usability improvements
+
+There are multiple smaller changes that improve the overall usability
+of MapProxy. The deployment documentation was updated and
+`mapproxy-util create -t base-config` now creates a minimal MapProxy
+configuration and a full configuration with nearly all available options.
+Most configuration erros should now give a friendly error message instead
+of a stack trace.
+
+#### Other fixes and changes
+
+There are many more change, improvements and changes.
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.6.0/CHANGES.txt>

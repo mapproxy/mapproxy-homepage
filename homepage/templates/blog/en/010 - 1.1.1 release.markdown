@@ -1,0 +1,23 @@
+
+---
+tags: release, mapproxy
+date: 2011/06/26 10:57:00
+format: markdown
+title: New MapProxy 1.1.1 release
+---
+
+There is a new bug fix release of MapProxy.
+
+The 1.1.1 release fixes:
+
+- add back transparent option for mapnik/tile sources (in addition
+ to image.transparent)
+- keep alpha channel when handling image.transparent_color
+- fixed combining of multiple WMS layers with transparent_color
+- fixed header parsing for MapServer CGI source
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy

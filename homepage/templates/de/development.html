@@ -1,0 +1,39 @@
+{% extends "base/index.html" %}
+{% block title %}
+  Entwicklung
+{% endblock %}
+
+{% block content %}
+<div class="row content-row">
+  <div class="col-md-12">
+    {{ heading('Entwicklung' ) }}
+  </div>
+
+  <div class="col-md-8">
+    <p>Sie möchten MapProxy weiterentwickeln oder haben Sie einen Fehler gefunden? Hier finden Sie einige nützliche Informationen wie Sie weiter vorgehen können.</p>
+
+    <h4>Fehler melden</h4>
+    <p>Für Fehler haben wir einen so genannten <a href="https://github.com/mapproxy/mapproxy/issues">Issue Tracker</a>. Hier können Sie schnell und einfach neue Einträge erstellen und Ihre Probleme melden.</p>
+
+    <h4>Quelltext</h4>
+    <p>Offizielle MapProxy-Versionen werden auf der <a href="http://pypi.python.org/pypi/MapProxy">PyPI Projektseite von MapProxy</a> veröffentlicht. Hier finden Sie auch ein <a href="http://pypi.python.org/packages/source/M/MapProxy/">Archiv das alle alten, offiziellen Versionen</a> beinhaltet. Inoffizielle Versionen oder Beta-Releases <a href="http://mapproxy.org/static/rel/">finden Sie hier</a>.
+
+    <p>MapProxy nutzt die Source-Code-Verwaltung <a href="http://git-scm.com/">Git</a>. Wenn Sie noch keine Erafhrung im Bereich Git haben, empfehlen wir Ihnen das kostenlose Buch <a href="http://git-scm.com/book">Pro Git (englisch)</a>.</p>
+
+    <p>Das Haupt-Repository finden Sie unter <a href="http://github.com/mapproxy/mapproxy">http://github.com/mapproxy/mapproxy</a></p>
+
+    <p>Um eine Kopie von MapProxy-Repository zu bekommen müssen Sie den Quellcode "clonen":</p>
+    <pre><code>git clone https://github.com/mapproxy/mapproxy</code></pre>
+
+    <h4>Wie kann ich etwas beitragen?</h4>
+    <p>Patches können über die Mailingliste oder  can post patches to the mailing list or create a new ticket. Eine weitere Möglichkeit ist das <a href="http://help.github.com/fork-a-repo/">Erstellen eines Forks</a> und senden Sie ihre Änderung in einem Pull-Request. Melden Sie sich einfach auf der <a href="support">Mailinligste</a> wenn Sie Fragen haben.</p>
+
+    <h4>Weitere Information</h4>
+    <p>In der <a href="http://mapproxy.org/docs/latest/development.html">Dokumentation</a> finden Sie ausführliche Informaitonen zum Thema Entwicklung. Hier werden viele Aspekte wie zum Beipsiel der Quellcode, Dokumetnation und Tests ausführlich beschrieben.</p>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

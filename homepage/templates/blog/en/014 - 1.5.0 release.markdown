@@ -1,0 +1,96 @@
+
+---
+tags: release, mapproxy
+date: 2012/12/05 11:00:00
+format: markdown
+title: New MapProxy 1.5.0 release
+---
+
+
+We are pleased to announce the release of MapProxy 1.5.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.5.0/>
+
+## New features
+
+Some noteworthy improvements since 1.4.0 are:
+
+
+#### Clipping WMTS/TMS/KML requests to polygons
+
+The security API now also supports limiting requests to polygon geometries
+for all tile services.
+
+See: <http://mapproxy.org/docs/1.5.0/auth.html#limited-to>
+
+
+#### Mixed image mode
+
+The mixed image mode automatically chooses between PNG and JPEG format
+depending if the image has transparency or not. This is a great feature
+for aerial images with transparency at the image boundaries. Thanks to
+Thomas Bonfort for the idea.
+
+See: <http://mapproxy.org/docs/1.5.0/configuration.html#format>
+
+#### Caches as source for other caches
+
+You can now use a cache as a source for another cache. You can use this
+to directly reproject tiles or to make changes to your grid configuration
+without losing your existing cache.
+
+See: <http://mapproxy.org/docs/1.5.0/configuration_examples.html#using-existing-caches>
+and <http://mapproxy.org/docs/1.5.0/configuration_examples.html#reprojecting-tiles>
+
+#### Changed default SRS in WMS
+
+The WMS now supports EPSG:3857, the official EPSG code of the Webmercator projection (EPSG:900913).
+UTM 32/33N and Gauß-Krüger zones 3-5 were removed from the default list, since they are only usable in parts of Europe.
+Make sure you've [configured all SRS you are using](http://mapproxy.org/docs/1.5.0/services.html#srs) in the service configuration.
+
+#### New tools
+
+There are three new tools:
+
+- `mapproxy-util grids`: debug and analyze grid configuration
+- `mapproxy-util wms-capabilities`: get bbox and min/max_scales of existing WMS
+- `mapproxy-util export`: export (parts) of your cache to MBTiles or a TMS directory
+
+See: <http://mapproxy.org/docs/1.5.0/mapproxy_util.html>
+
+
+#### Other features
+
+- use_grid_names option to access Tiles/TMS/KML layers by grid
+ name instead of EPSGXXXX
+- origin option for TMS to change default origin of the /tiles service
+- continue stopped/interrupted seed processes
+- support min_res/max_res for tile sources
+
+#### Improvements
+
+- do not show layers with incompatible grids in WMTS/TMS demo
+- make 0/0/0.kml optional for the initial KML file
+- use BBOX of coverage for capabilities in seed_only layers
+- ignore debug layer when loading tile layers
+- simplified coverage configuration
+- add reloader option to make_wsgi_app()
+- add MetadataURL to WMS 1.1.1 capabilities
+- improved WMTS services with custom grids (origin)
+- use in_image exceptions in WMS demo client
+- larger map in demo client
+- always request with transparent=true in WMS demo client
+- use in_image exceptions in WMS demo client
+
+
+#### Other fixes and changes
+
+For a complete list of changes see:
+<https://github.com/mapproxy/mapproxy/blob/1.5.0/CHANGES.txt>

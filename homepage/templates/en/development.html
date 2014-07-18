@@ -1,0 +1,42 @@
+{% extends "base/index.html" %}
+{% block title %}
+Development
+{% endblock %}
+
+{% block content %}
+<div class="row content-row">
+  <div class="col-md-12">
+    {{ heading('Development' ) }}
+  </div>
+
+  <div class="col-md-8">
+    <p>You want to improve MapProxy, found a bug and want to fix it? Great! This document points you to some helpful information. </p>
+
+    <h4>Source</h4>
+    <p>Releases are available from the <a href="http://pypi.python.org/pypi/MapProxy">PyPI project page of MapProxy</a>. There is also <a href="http://pypi.python.org/packages/source/M/MapProxy/
+      [mp-archive]: ">an archive of all official releases</a>, unofficial releases and pre-releases <a href="http://mapproxy.org/static/rel/">can be found here</a>.
+
+      <p>MapProxy uses <a href="http://git-scm.com/">Git</a> as a source control management tool. If you are new to distributed SCMs or Git we recommend to read <a href="http://git-scm.com/book">Pro Git</a>.</p>
+
+      <p>The main (authoritative) repository is hosted at <a href="http://github.com/mapproxy/mapproxy">http://github.com/mapproxy/mapproxy</a></p>
+
+      <p>To get a copy of the repository call:</p>
+      <pre><code>git clone https://github.com/mapproxy/mapproxy</code></pre>
+
+      <h4>CI Server</h4>
+      <p>We have a continuos integration server that automatically runs the MapProxy test suite against different Python versions. The server is located at <a href=http://ci.mapproxy.org>http://ci.mapproxy.org</a></p>
+    </p>
+
+    <h4>How to contribute</h4>
+    <p>You can post patches to the mailing list or create a new ticket. Or better, <a href="http://help.github.com/fork-a-repo/">create a fork</a> instead and send a pull request. Feel free to post to the <a href="support">mailing list first</a>, if you have any question.</p>
+
+
+    <h4>More information</h4>
+    <p>There is a <a href="http://mapproxy.org/docs/latest/development.html">whole chapter about development in the documentation</a>. It covers most aspects of the MapProxy development including the source code, documentation, tests, etc.</p>
+
+  </div>
+
+</div>
+
+{% endblock %}
+

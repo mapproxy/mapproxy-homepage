@@ -1,0 +1,55 @@
+---
+tags: release, mapproxy
+date: 2012/05/15 15:00:00
+format: markdown
+title: New MapProxy 1.4.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.4.0. It
+contains major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.4.0/>
+
+## New features
+
+Some noteworthy improvements since 1.3.0 are:
+
+
+### Clipping requests to polygons
+
+The security API now supports limiting requests to polygon geometries
+with the limited_to feature.
+
+![Request clipping](/imgs/auth_limited_to.png)
+
+See [auth API](http://mapproxy.org/docs/nightly/auth.html#limited-to).
+
+### Demo service
+
+The demo service now allows you to query WMS layers in all supported SRS.
+It now also supports WMTS if you have enabled this service.
+
+
+### Other improvements
+
+- WMS 1.3.0 now supports extended layer capabilities for metadata etc.
+- You can configure fallbacks for errors in tile sources. MapProxy can
+ create an empty tile if the tile source returns a 404 not found for
+ a tile, for example.
+
+Note:
+There was a bug in the configuration loader that permitted to have an
+error in the layers configuration. Please make sure your configuration is
+valid after upgrading.
+
+
+### Changelog
+
+For a complete list of changes see:
+<http://bitbucket.org/olt/mapproxy/src/1.4.0/CHANGES.txt>

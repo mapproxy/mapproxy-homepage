@@ -1,0 +1,60 @@
+{% extends "base/index.html" %}
+{% block title %}
+  Download
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8">
+    {{ heading('Download') }}
+    <p>Alle Versionen von MapProxy werden auf der <a href="http://pypi.python.org/pypi/MapProxy">PyPI Projektseite</a> zum Download bereitgestellt. Neben der aktuellen Version finden Sie hier auch ein <a href="https://pypi.python.org/packages/source/M/MapProxy/">Archiv mit allen offiziellen Versionen</a>. Inoffizielle Versionen und Beta-Versionen können <a href="http://mapproxy.org/static/rel/">auf dieser Seite</a> abgerufen werden.</p>
+
+    <p>Ein manueller Download von MapProxy ist aber oft nicht notwendig. MapProxy kann direkt mit den Python-Werkzeugen easy_install oder pip auf Ihrem System installiert werden. Mehr Informationen über die Installation finden Sie in der Dokumentation im <a href="http://mapproxy.org/docs/latest/install.html">Kapitel Installation</a>.</p>
+  </div>
+</div>
+
+<div class="row content-row">
+  <div class="col-md-8">
+    <h3>Versionen</h3>
+
+    <p>Der aktuelle Stand der Entwicklung ist in der Hauptversion 1.x abgebildet. Alle neuen Funktionen werden in die jeweils nächsten Hauptversion (engl. major release) veröffentlicht. Für kleinere Änderungen oder Fehlerbeseitigungen wird MapProxy zudem in kleineren Versionen, mit so genannten Nebenversionsnummer (engl. minor release), z.B. 1.2.1, zum Download bereitgestellt.</p>
+
+    <p>Änderungen zwischen einzelnen Versionen werden in der Textdatei  <a href="https://github.com/mapproxy/mapproxy/blob/master/CHANGES.txt">CHANGES.txt</a> dokumentiert.</p>
+
+    <h4>1.7.x</h4>
+    <p>Die aktuelle Version wurde unter der <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a> veröffentlicht.</p>
+
+    <p>Um die aktuelle Version zu installieren führen Sie folgenden Befehl aus:</p>
+    <pre><code>pip install MapProxy</code></pre>
+
+    <h4>Alte Versionen</h4>
+    <p>Sie können vorherige MapProxy-Versionen weiterhin installieren. Bei der Installation müssen Sie hierfür die entsprechende Versionsnummer  angeben. So kann zum Beispiel MapProxy in der Version 1.1.1 installiert werden:</p>
+
+    <pre><code>pip install 'MapProxy==1.1.1'</code></pre>
+
+    <p>Oder die letzte Version der Version 1.2.x zu, aber nicht die neuere Version 1.3:</p>
+
+    <pre><code>pip install 'MapProxy<1.2.99'</code></pre>
+
+    <h4>1.1.x und neuer</h4>
+    <p>Seit der Version 1.1.x wurden alle Versionen wurde unter <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a>veröffentlicht.</p>
+
+    <h4>1.0.x</h4>
+    <p>Die MapProxy Version 1.0.1 und alle vorherige Versionen wurden unter der <a href="http://www.fsf.org/licensing/licenses/agpl-3.0.html">GNU AGPL License 3.0</a> veröffentlicht.</p>
+
+    <p class="bs-callout bs-callout-warning">Bitte beachten Sie die <a href="/blog/new-mapproxy-1.0.0-release">Informationen zum Upgrade, wenn Sie MapProxy von Version 0.9 aktualisieren</a></p>
+
+    <h4> 0.9.x</h4>
+    <p class="bs-callout bs-callout-warning">Achtung: Das Format der Konfiguration hat sich zwischen den Versionen 0.8.x und 0.9.x geändert. Achten Sie darauf, dass das <a href="http://mapproxy.org/docs/latest/migrate.html">neue Format</a>eingehalten wird.</p>
+
+    <h4>Nightly</h4>
+    <p>Das MapProxy Projekt stellt keine "Nightly Builds" von MapProxy bereit. Dies ist nicht notwendig, da Sie MapProxy direkt aus den aktuellen Entwicklungsquellen installieren können:</p>
+
+    <pre><code>pip install https://github.com/mapproxy/mapproxy/tarball/master</code></pre>
+    <p>Die Quellen sind ebenfalls für die einzelnen Versionen verfügbar. Zum Beispiel:</p>
+
+    <pre><code>pip install https://github.com/mapproxy/mapproxy/tarball/1.4.x</code></pre>
+  </div>
+</div>
+{% endblock %}
+

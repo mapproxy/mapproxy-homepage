@@ -1,0 +1,57 @@
+{% extends "base/index.html" %}
+{% block title %}
+Support
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    {{ heading('Support') }}
+  </div>
+</div>
+
+
+<div class="row content-row">
+  <div class="col-md-8">
+    <p>If you need help setting up MapProxy, having some trouble or found a bug? There are different ways to get help:</p>
+
+    <h4>Commercial support</h4>
+    <p><a href="http://omniscale.com">Omniscale</a>, the creator of MapProxy, offers a wide range of commercial support: From on-site training, installation and configuration assistance, general consulting to personal mail and phone support with guaranteed response times. <a href="http://omniscale.com/contact">Contact us</a> for more information.</p>
+
+    <h4>Mailing List</h4>
+    <p>The <a href="http://osgeo.org/">OSGeo</a> is hosting our mailing list: <a href="http://lists.osgeo.org/mailman/listinfo/mapproxy">mapproxy@lists.osgeo.org</a></p>
+
+    <p>The list is for users and developers and is the best place to discuss MapProxy. You must <a href="http://lists.osgeo.org/mailman/listinfo/mapproxy">subscribe to the list<7a> before you can write. There is an <a href="http://lists.osgeo.org/pipermail/mapproxy/">archive</a> of all older posts.</p>
+
+    <h4> How to ask for help?</h4>
+    <p>There are a few things you should consider when asking for help on the mailing list, that will make it more likely to get a fast *and* helpful response.</p>
+
+    <ul>
+      <li>Describe what you're trying to do and what your end result should be. It's possible that there is an easier way to do something.</li>
+
+      <li>Always include a minimal configuration to reproduce your setup – including all grids, caches, sources and layers. But remove all unrelated parts, e.g. when you have multiple sources/caches/layers.</li>
+
+      <li>Describe what you are expecting and what you get. Include URLs you are requesting from MapProxy and URLs of requests that MapProxy makes to your source.</li>
+
+      <li>Describe what you already tried to do.</li>
+
+      <li>Include the software versions of your setup (MapProxy, Windows/Linux, Proj4, PIL, etc.).</li>
+
+      <li>Try to see if it works with `mapproxy-util serve-develop` if your issue is not related to the deployment itself. Copy any error output in your mail.</li>
+
+      <li>Always include a *minimal* configuration to reproduce your setup.</li>
+
+      <li>There is a hard limit of 100kB per mail on the mailing list. Avoid HTML, only post tiny pictures and/or use external webspace (or Dropbox) for larger stuff.</li>
+
+      <li>Use these guidelines with common sense. For example, we don't need your OpenLayers configuration when MapProxy doesn't start up.</li>
+    </ul>
+
+    <h4>IRC</h4>
+    <p>There is a <a href="irc://irc.freenode.net/%23mapproxy">#mapproxy</a> IRC channel on irc.freenode.net, where you might find someone to help you.</p>
+
+    <h4>Issue Tracker</h4>
+    <p>Found a bug, or want to request some feature? We have an <a href="https://github.com/mapproxy/mapproxy/issues">issue tracker</a> for that, where you can create new tickets. See <a href="development">development</a>.</p>
+
+  </div>
+</div>
+{% endblock %}

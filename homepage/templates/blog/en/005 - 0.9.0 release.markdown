@@ -1,0 +1,71 @@
+
+---
+tags: release, mapproxy
+date: 2010/10/18 00:00:00
+format: markdown
+title: New MapProxy 0.9.0 release
+---
+
+We are finally ready to announce the release of MapProxy 0.9.0. It
+contains lots of major and minor improvements.
+
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/0.9.0/>
+
+
+Some noteworthy improvements are:
+
+Demo Service
+------------
+
+MapProxy now comes with a demo service that lists all configured WMS and
+TMS layers. You can test each layer with a simple OpenLayers client at
+/demo.
+
+<http://mapproxy.org/docs/0.9.0/services.html#mapproxy-demo-service>
+
+
+Configuration
+-------------
+
+A biggest and most apparent change is the configuration format. MapProxy
+still uses YAML as a configuration format, but the structure changed a
+bit.
+
+Some benefits of the new configuration: Most global options, like image
+resampling and meta_size, are now configurable for each cache; you can
+now reuse parts of the configuration, like grid or source definitions;
+and there is now a single configuration file instead of two
+(service.yaml and proxy.yaml).
+
+There is a small migration guide that should help to update your
+configuration. <http://mapproxy.org/docs/0.9.0/migrate.html>
+
+Oh, and in case you didn't know, YAML is compatible with JSON. So you
+can use JSON for the configuration if you like.
+
+
+Less dependencies
+-----------------
+
+We removed two dependencies that required a C compiler. The only
+dependency that still requires compilation is the Python Image Library
+(PIL). If you use PIL from your system distribution (python-imaging on
+Debian/Ubuntu) you will no longer need a compiler during installation.
+
+We switched the templates away from Jinja2 to Tempita, a minimal
+Python-only template engine. It is a bit slower, but it is only used for
+capability documents, so the WMS and TMS performance is not affected.
+
+The other dependency which required compilation was pyproj. We we added a
+wrapper to MapProxy that directly uses libproj, the Proj4 C-library.
+libproj is available on most systems and should already be installed
+when you use software like MapServer or PostGIS. There is a fallback to
+pyproj, i.e. you can still use the binary distribution of pyproj on
+Windows.
