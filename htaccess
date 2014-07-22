@@ -1,0 +1,14 @@
+DirectoryIndex index.html index.htm index.xml
+
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^$ /www/index.html [L]
+
+RewriteCond  %{REQUEST_URI} ^/docs/?$
+RewriteRule  ^(.*)$  http://mapproxy.org/docs/latest/  [R]
+
+RewriteCond  %{REQUEST_URI} !^/www/
+RewriteCond  %{REQUEST_URI} !^/docs/
+RewriteCond  %{REQUEST_URI} !^/static/(deps|foss5g2011|foss4g2013|index.html|polygons|rel|workshop|blog)/
+RewriteRule  ^(.*)$  /www/$1  [L]
