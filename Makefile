@@ -12,10 +12,8 @@ update_all: build_all sync
 
 build_all:
 	python manage.py freeze_all
-	cp htaccess build/de/.htaccess
-	cp htaccess build/en/.htaccess
 
 sync:
-	rsync -av _site/ ssh-226270-os@omniscale.de:domains/mapproxy.org/www/
-	rsync -av _site/ ssh-226270-os@omniscale.de:domains/mapproxy.de/
+	rsync $(RSYNC_OPTS) build/en/ ssh-226270-os@omniscale.de:domains/mapproxy.org/www/
+	rsync $(RSYNC_OPTS) build/de/ ssh-226270-os@omniscale.de:domains/mapproxy.de/
 
