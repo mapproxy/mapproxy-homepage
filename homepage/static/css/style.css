@@ -10,7 +10,7 @@ body {
 }
 
 body > .container {
-  padding: 60px 15px 0;
+  padding: 45px 15px 0;
 }
 
 a {
@@ -41,12 +41,51 @@ p.without-bottom, .blog-title-small {
 }
 
 .navbar-brand {
-  height: 70px;
+  background-image: url('../img/mapproxy.png');
+  background-repeat: no-repeat;
+  height: 53px;
+  margin-top: 5px;
+  width: 250px;
+  background-size: 249px 50px;
 }
 
-.navbar-nav > li > a {
-  padding-top: 35px;
+
+
+@media (min-width: 768px) {
+  .navbar-brand {
+   background-size: 180px 36px;
+    width: 250px;
+    margin-top: 10px;
+
+  }
+  .navbar-nav > li > a {
+    padding-top: 25px;
+  }
 }
+
+
+@media (min-width: 992px) {
+  .navbar-brand {
+   background-size: 249px 50px;
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 35px;
+  }
+
+}
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .navbar-brand {
+    background-image: url('../img/mapproxy.png');
+    background-repeat: no-repeat;
+    background-size: 249px 50px;
+  }
+}
+
+
 
 .title {
   padding: 0;
@@ -342,3 +381,20 @@ div.olLayerDiv {
   font-size: 1px;
   filter: alpha(opacity=50);
 }
+
+@media (max-width: 767px) {
+  .navbar-brand {
+   margin-top: 1px;
+  }
+  .navbar-nav > li > a {
+    padding-top: 15px;
+  }
+  body {
+      margin-bottom: 260px;
+    }
+
+  .footer {
+    height: 250px;
+  }
+}
+
