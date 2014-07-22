@@ -1,11 +1,15 @@
-{% macro blog_header(title, user, date, link) %}
+{% macro blog_header(title, date, link) %}
 <h3 class="blog-title"><a href="/blog/{{link}}">{{ title }}</a></h3>
 <ul class="text-muted list-inline">
-  <li><i class="fa fa-user"></i> {{ user }}</li>
   <li><i class="fa fa-calendar"></i> {{ date }}</li>
 </ul>
-<hr>
 {% endmacro %}
+
+{% macro blog_entry(header, content) -%}
+    {{ blog_header(header['title'], header['date'], header['slug']) }}
+    {{ content | safe }}
+{%- endmacro %}
+
 
 {% macro heading(title, infotext) %}
 <h2 class="title">

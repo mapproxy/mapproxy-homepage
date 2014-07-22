@@ -1,7 +1,11 @@
 import os
-from flask import Flask, render_template, send_from_directory, current_app, abort
+
+import datetime
+import feedformatter
+from flask import Flask, render_template, send_from_directory, current_app, abort, Response, url_for
 from flask.templating import TemplateNotFound
 from flaskext.markdown import Markdown
+from .blog import parse_blog_entries
 
 app = Flask('homepage')
 
@@ -49,8 +53,38 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 @app.route("/")
 def index():
+    blog_entries = []
     language = app.language
-    return render_template(language+'/index.html', language=language)
+    if language == 'en':
+        blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
+        blog_entries = parse_blog_entries(blog_dir)
+    return render_template(language+'/index.html', language=language, entries=blog_entries)
+
+
+@app.route("/blog/feed")
+def blog_feed():
+    blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
+    blog_entries = parse_blog_entries(blog_dir)
+
+    for header, _ in blog_entries:
+        header['permalink'] = url_for('blog', slug=header['slug'], _external=True)
+
+    rss = render_template(os.path.join('base', 'rss.xml'),
+        entries=blog_entries,
+        now=datetime.datetime.utcnow(),
+    )
+    return Response(rss, mimetype='application/xml')
+
+@app.route("/blog/")
+@app.route("/blog/<slug>")
+def blog(slug=None):
+    blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
+    blog_entries = parse_blog_entries(blog_dir)
+
+    if slug:
+        blog_entries = [(h, c) for h, c in blog_entries if h['slug'] == slug]
+
+    return render_template(os.path.join('base', 'blog.html'), language=app.language, entries=blog_entries)
 
 @app.route("/<folder>/<name>")
 @app.route("/<folder>/")

@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% block title %}
+  Blog
+{% endblock %}
+
+{% from "base/macros.html" import blog_entry %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-8 ">
+
+    {% for header, entry in entries %}
+        {{ blog_entry(header, entry) }}
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+
+  </div>
+</div>
+{% endblock %}
+
+

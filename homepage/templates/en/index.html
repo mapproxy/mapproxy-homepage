@@ -18,7 +18,21 @@
   </div>
 </div>
 
-<div class="row top-buffer-3">
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="title">News</h3>
+    <ul>
+    {% for header, content in entries[:5] %}
+    <li>{{ header.date.strftime("%Y-%m-%d") }}: <a href="{{ url_for('blog', slug=header['slug']) }}">{{ header.title }}</a></li>
+      <pubDate></pubDate>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<div class="row top-buffer-1">
   <div class="col-md-12">
         {{ heading('Features of MapProxy') }}
   </div>
@@ -26,15 +40,14 @@
 
 <div class="row">
   <div class="col-sm-6 col-md-5">
-    <h3 class="title colored">Tile cache</h3>
+    <h3 class="title">Tile cache</h3>
     <p>MapProxy is a tile server (WMS-C, TMS, WMTS, KML SuperOverlays). It reads data from:</p>
 
     <ul>
       <li>WMS sources (1.0.0–1.3.0)</li>
-* WMS sources (1.0.0–1.3.0)
-* TMS/WMTS sources
-* Mapserver and Mapnik configurations
-* any TileCache, Google Maps or Bing compatible source
+      <li>TMS/WMTS sources</li>
+      <li>Mapserver and Mapnik configurations</li>
+      <li>any TileCache, Google Maps or Bing compatible source</li>
     </ul>
     <h5>Other features:</h5>
     <ul>
@@ -51,8 +64,8 @@
   </div>
 
   <div class="col-sm-6 col-md-offset-1 col-md-6">
-    <h3 class="title colored">WMS</h3>
-    <p>MapProxy is also a **full compliant WMS server** and supports **any WMS client** (desktop and web).It supports WMS responses from cached data:</p>
+    <h3 class="title">WMS</h3>
+    <p>MapProxy is also a <em>full compliant WMS server</em> and supports <em>any WMS client</em> (desktop and web). It supports WMS responses from cached data:</p>
 
     <ul>
       <li>merges tiles and scales or reprojects images</li>
@@ -82,13 +95,13 @@
 
 <div class="row top-buffer-2">
   <div class="col-md-8 feature">
-    <h3 class="title colored">Authorization</h3>
+    <h3 class="title">Security</h3>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6">
-    <p>MapProxy comes with a flexible authorization API that allows you to add fine-grained control over services and layers. You can even restict access of single layers to polygon extents.</p>
+    <p>MapProxy comes with a flexible security API that allows you to add fine-grained control over services and layers. You can even restict access of single layers to polygon extents.</p>
   </div>
   <div class="col-md-6">
     <img src="{{ url_for('static', filename='img/auth_limited_to.png') }}" alt="MapProxy" class="img-responsive">
@@ -100,7 +113,7 @@
 <div class="row top-buffer-2">
 
   <div class="col-md-6">
-    <h3 class="title colored">Seeding</h3>
+    <h3 class="title">Seeding</h3>
     <p>You can pre-generate the tile cache for better performance – this is called seeding. Some unique features:</p>
 
     <ul>
@@ -112,7 +125,7 @@
   </div>
 
   <div class="col-md-6">
-    <h3 class="title colored">Other features</h3>
+    <h3 class="title">Other features</h3>
     <p>You can use MapProxy to upgrade your SDI without touching your existing servers:</p>
 
     <ul>
@@ -139,7 +152,7 @@
 
 <div class="row top-buffer-2">
   <div class="col-md-7">
-    <h3 class="title colored">Getting started</h3>
+    <h3 class="title">Getting started</h3>
     <p>Curious? With the following four lines you can install MapProxy and all dependencies, create a new configuration and start MapProxy in development mode. </p>
     <p>After that you can visit <http://localhost:8080/>.</p>
     <pre><code>sudo aptitude install python-imaging python-yaml libproj0
@@ -153,7 +166,7 @@ mapproxy-util serve-develop ./mapproxy.yaml</pre></code>
 
 <div class="row top-buffer-2">
   <div class="col-md-12">
-    <h3 class="title colored">Demo</h3>
+    <h3 class="title">Demo</h3>
     <p>Below is an OpenLayers client that shows an OpenStreetMap WMS behind a MapProxy installation.<br>
     For a full-screen demo visit: <a href="http://osm.omniscale.de">osm.omniscale.de</a></p>
     <div id="map">
