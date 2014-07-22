@@ -13,7 +13,7 @@ function init(){
                   numZoomLevels: 19,
                   controls: [],
                   displayProjection: new OpenLayers.Projection("EPSG:4326"),
-                  style: null
+                  theme: null
               };
 
 
