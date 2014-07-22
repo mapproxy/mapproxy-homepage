@@ -1,34 +1,11 @@
 import os
 
 import datetime
-import feedformatter
 from flask import Flask, render_template, send_from_directory, current_app, abort, Response, url_for
 from flask.templating import TemplateNotFound
-from flaskext.markdown import Markdown
 from .blog import parse_blog_entries
 
 app = Flask('homepage')
-
-# redirects = [
-#     # path, name
-#     ('new-mapproxy-1.7.0-release', '017 - 1.7.0 release.markdown'),
-#     ('new-mapproxy-1.6.0-release', '016 - 1.6.0 release.markdown'),
-#     ('3rd-anniversary-of-mapproxy', '015 - 3rd anniversary.markdown'),
-#     ('new-mapproxy-1.5.0-release', '014 - 1.5.0 release.markdown'),
-#     ('new-mapproxy-1.4.0-release', '013 - 1.4.0 release.markdown'),
-#     ('new-mapproxy-1.3.0-release', '012 - 1.3.0 release.markdown'),
-#     ('new-mapproxy-1.2.0-release', '011 - 1.2.0 release.markdown'),
-#     ('new-mapproxy-1.1.1-release', '010 - 1.1.1 release.markdown'),
-#     ('new-mapproxy-1.1.0-release', '009 - 1.1.0 release.markdown'),
-#     ('new-mapproxy-1.0.0-release', '008 - 1.0.0 release.markdown'),
-#     ('new-mapproxy-0.9.1-release', '007 - 0.9.1 release.markdown'),
-#     ('new-mapproxy-1.5.0-release', '006 - nightly documentation.markdown'),
-#     ('new-mapproxy-0.9.0-release', '005 - 0.9.0 release.markdown'),
-#     ('new-mapproxy-0.8.5-release', '004 - 0.8.5 release.markdown'),
-#     ('improving-the-performance-for-png-requests', '003 - improving png performance.markdown'),
-#     ('new-mapproxy-0.8.4-release', '002 - 0.8.4 release.markdown'),
-#     ('mapproxy-raster-image-benchmark', '001 - raster image benchmark.markdown'),
-# ]
 
 error_codes = ['404']
 
@@ -40,8 +17,6 @@ def create_app(conf=None):
 
     for error in error_codes:
         app.add_url_rule('/errors/%s.html' % error, error, error_pages, defaults={'error': error})
-
-    Markdown(app)
     return app
 
 def error_pages(error):
