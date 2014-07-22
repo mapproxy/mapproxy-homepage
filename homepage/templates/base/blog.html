@@ -5,8 +5,17 @@
 
 {% from "base/macros.html" import blog_entry %}
 
-
 {% block content %}
+  {% if language == 'de' %}
+  <div class="row">
+    <div class="col-md-8">
+      <div class="bs-callout bs-callout-warning">
+        <p>Der MapProxy-Blog ist derzeit nur in englischer Sprache verfügbar.</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
 <div class="row">
   <div class="col-sm-8 ">
 
