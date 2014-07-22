@@ -36,7 +36,7 @@ def index():
     return render_template(language+'/index.html', language=language, entries=blog_entries)
 
 
-@app.route("/blog/feed")
+@app.route("/blog/feed/")
 def blog_feed():
     blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
     blog_entries = parse_blog_entries(blog_dir)
@@ -51,7 +51,7 @@ def blog_feed():
     return Response(rss, mimetype='application/xml')
 
 @app.route("/blog/")
-@app.route("/blog/<slug>")
+@app.route("/blog/<slug>/")
 def blog(slug=None):
     blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
     blog_entries = parse_blog_entries(blog_dir)
