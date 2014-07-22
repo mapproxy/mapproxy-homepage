@@ -26,7 +26,7 @@ Some noteworthy improvements since 1.3.0 are:
 The security API now supports limiting requests to polygon geometries
 with the limited_to feature.
 
-![Request clipping](/imgs/auth_limited_to.png)
+![Request clipping](/static/img/auth_limited_to.png)
 
 See [auth API](http://mapproxy.org/docs/nightly/auth.html#limited-to).
 
