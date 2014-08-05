@@ -22,6 +22,10 @@ def create_app(conf=None):
 def error_pages(error):
     return render_template("errors/"+error+".html", error=error, language=app.language)
 
+@app.route('/mapproxy.png')
+def mapproxy_png():
+    return send_from_directory(os.path.join(current_app.root_path, 'static', 'img'), 'mapproxy-overview.png')
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(current_app.root_path, 'static', 'img'),
