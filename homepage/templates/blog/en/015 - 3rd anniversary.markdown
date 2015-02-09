@@ -37,4 +37,3 @@ And of course, we also like to thank all contributers of MapProxy and all users 
 The next release is coming and the list of ideas for 2.0 is growing.
 
 *On to the next three years!*
-{% endfilter %}
