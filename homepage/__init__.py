@@ -46,7 +46,7 @@ def blog_feed():
     blog_entries = parse_blog_entries(blog_dir)
 
     for header, _ in blog_entries:
-        header['permalink'] = url_for('blog', slug=header['slug'], _external=True)
+        header['permalink'] = 'http://mapproxy.org' + url_for('blog', slug=header['slug'])
 
     rss = render_template(os.path.join('base', 'rss.xml'),
         entries=blog_entries,
