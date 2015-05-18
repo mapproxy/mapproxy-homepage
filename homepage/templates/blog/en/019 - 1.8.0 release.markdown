@@ -1,0 +1,35 @@
+
+---
+tags: release, mapproxy
+date: 2015/05/18 13:45:00
+format: markdown
+title: New MapProxy 1.8.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.8.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <http://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <http://mapproxy.org/docs/1.8.0/>
+
+### Python 3
+
+The most important change is the support for Python 3. MapProxy 1.8 now officially supports Python 2.7, 3.3 and 3.4.
+Python 2.6 should still work as expected, but is no longer officially supported.
+
+
+### The road to MapProxy 2.0
+
+MapProxy 2 will make a few changes to the configuration. The biggest changes are a few default values that will be changed to more consistent or more *modern* values. For example, the default tile origin will be compatible with WMTS and EPSG:900913 will no longer be one of the default SRS.
+
+MapProxy 1.8 now prints out warnings if your configuration relies on one of these default values. You will need to address these warnings before upgrading to MapProxy 2.0 in the future.
+
+### Other fixes and changes
+
+There are many more changes and improvements.
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.8.0/CHANGES.txt>
