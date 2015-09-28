@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+
+{% block title %} About {% endblock %}
+
+{% block meta %}
+  <meta http-equiv="refresh" content="3; URL={{url_for('page', name='about', _external=True)}}">
+{% endblock %}
+
+
+{% block content %}
+<div class="row top-buffer-2">
+  <div class="col-md-6">
+    <p>The page has been moved. Please follow <a href="{{url_for('page', name='about')}}">the link</a> if your browser do not support automatically redirect.</p>
+  </div>
+</div>
+{% endblock %}
+

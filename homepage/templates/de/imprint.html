@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+
+{% block title %} About {% endblock %}
+
+{% block meta %}
+  <meta http-equiv="refresh" content="3; URL={{url_for('page', name='about', _external=True)}}">
+{% endblock %}
+
+
+{% block content %}
+<div class="row top-buffer-2">
+  <div class="col-md-6">
+		<p>Die von Ihnen aufgerufene Seite existiert nicht mehr. Sie werden automatisch auf die neue Seite weitergeleitet. Sollte die automatische Weiterleitung nicht von Ihrem Browser unterstützt werden klicken Sie bitte <a href="{{url_for('page', name='impressum')}}">hier</a>.</p>
+  </div>
+</div>
+{% endblock %}
+
