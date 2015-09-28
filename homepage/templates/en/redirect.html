@@ -1,0 +1,18 @@
+{% extends "base/index.html" %}
+{% block title %} Page not found {% endblock %}
+
+{% block page_header %}
+<h1>Page not found</h1>
+<p class="last">This page has been moved.</p>
+{% endblock %}
+
+{% block content %}
+<meta http-equiv="refresh" content="3; URL={{ url_for('page', folder=folder, name=name) }}">
+
+<div class="row top-buffer-2">
+	<h2>Page not found</h2>
+	<p>If your browser does not support automatic redirection please follow <a href="{{ url_for('page', folder=folder,  name=name) }}">the link</a> to the new page.</p>
+</div>
+{% endblock %}
+
+

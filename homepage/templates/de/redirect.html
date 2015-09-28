@@ -1,0 +1,19 @@
+{% extends "base/index.html" %}
+
+{% block title %}Datei nicht gefunden{% endblock %}
+
+{% block page_header %}
+<h1>Weiterleitung</h1>
+<p class="last">Der gesuchte Inhalt ist umgezogen.</p>
+{% endblock %}
+
+{% block content %}
+<meta http-equiv="refresh" content="3; URL={{ url_for('page', folder=folder, name=name) }}">
+
+<div class="row top-buffer-2">
+	<p>Der gesuchte Inhalt ist umgezogen. Sie werden von Ihrem Browser automatisch weitergeleitet. Falls dies nicht der Fall ist finden Sie die Informationen <a href="{{ url_for('page', folder=folder, name=name) }}">auf dieser Seite</a></p>
+</div>
+
+{% endblock %}
+
+

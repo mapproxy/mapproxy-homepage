@@ -9,27 +9,63 @@ app = Flask('homepage')
 
 error_codes = ['404']
 
+redirects = [
+    # old_path, folder, name , language
+    ('imprint', '', 'about', 'en'),
+]
+
+
 def create_app(conf=None):
     app.debug = True
-    app.language = 'en' # use 'de' or en'
+    app.language = 'en'  # use 'de' or en'
+
     app.config.setdefault('FREEZER_DEFAULT_MIMETYPE', 'text/html')
     app.config.setdefault('FREEZER_IGNORE_MIMETYPE_WARNINGS', True)
 
+    for redirect in redirects:
+        app.add_url_rule(
+            '/'+redirect[0],
+            redirect[0],
+            redirect_pages,
+            defaults={
+                    'folder': redirect[1],
+                    'name': redirect[2],
+            })
+
     for error in error_codes:
-        app.add_url_rule('/errors/%s.html' % error, error, error_pages, defaults={'error': error})
+        app.add_url_rule(
+            '/errors/%s.html' % error,
+            error,
+            error_pages,
+            defaults={'error': error})
     return app
 
+
+def redirect_pages(folder, name):
+    language = app.language
+    return render_template(
+            language+'/redirect.html',
+            folder=folder,
+            name=name,
+            language=language
+    )
+
+
 def error_pages(error):
-    return render_template("errors/"+error+".html", error=error, language=app.language)
+    return render_template("errors/" + error + ".html", error=error, language=app.language)
+
 
 @app.route('/mapproxy.png')
 def mapproxy_png():
     return send_from_directory(os.path.join(current_app.root_path, 'static', 'img'), 'mapproxy-overview.png')
 
+
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(current_app.root_path, 'static', 'img'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
 @app.route("/")
 def index():
     blog_entries = []
@@ -37,7 +73,7 @@ def index():
     if language == 'en':
         blog_dir = os.path.join(current_app.root_path, 'templates', 'blog', 'en')
         blog_entries = parse_blog_entries(blog_dir)
-    return render_template(language+'/index.html', language=language, entries=blog_entries)
+    return render_template(language + '/index.html', language=language, entries=blog_entries)
 
 
 @app.route("/blog/feed/")
@@ -49,10 +85,11 @@ def blog_feed():
         header['permalink'] = 'http://mapproxy.org' + url_for('blog', slug=header['slug'])
 
     rss = render_template(os.path.join('base', 'rss.xml'),
-        entries=blog_entries,
-        now=datetime.datetime.utcnow(),
-    )
+                          entries=blog_entries,
+                          now=datetime.datetime.utcnow(),
+                          )
     return Response(rss, mimetype='application/xml')
+
 
 @app.route("/blog/")
 @app.route("/blog/<slug>/")
@@ -65,6 +102,7 @@ def blog(slug=None):
 
     return render_template(os.path.join('base', 'blog.html'), language=app.language, entries=blog_entries)
 
+
 @app.route("/<folder>/<name>")
 @app.route("/<folder>/")
 @app.route("/<name>")
@@ -73,8 +111,6 @@ def page(name='', folder=''):
     if not name:
         name = 'index'
     try:
-        return render_template(language+'/'+folder + '/' + name + '.html', pagename=name, folder=folder, language=language)
+        return render_template(language + '/' + folder + '/' + name + '.html', pagename=name, folder=folder, language=language)
     except TemplateNotFound:
         abort(404)
-
-

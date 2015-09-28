@@ -3,7 +3,7 @@
 from flask import url_for
 from flask.ext.script import Manager
 from flask_frozen import Freezer
-from homepage import create_app,  error_codes
+from homepage import create_app, error_codes, redirects
 from homepage.blog import parse_blog_slugs
 
 app = create_app()
@@ -11,16 +11,26 @@ manager = Manager(app)
 
 freezer = Freezer(app)
 
+
 @freezer.register_generator
 def blog_slug_url_generator():
     if app.language == 'en':
         for blog_slug in parse_blog_slugs('homepage/templates/blog/en'):
             yield url_for('blog', slug=blog_slug)
 
+
+@freezer.register_generator
+def redirects_url_generator():
+    for redirect in redirects:
+        if redirect[3] == app.language:
+            yield '/'+ redirect[0]
+
+
 @freezer.register_generator
 def errors_url_generator():
     for error in error_codes:
         yield '/errors/%s.html' % error
+
 
 @manager.option('-l', '--language', help='Build language, start static server')
 def freeze(language='de'):
@@ -41,5 +51,4 @@ def freeze_all():
 
 if __name__ == "__main__":
     manager.run()
-
 
