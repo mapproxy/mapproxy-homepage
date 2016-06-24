@@ -14,6 +14,6 @@ build_all:
 	python manage.py freeze_all
 
 sync:
-	rsync $(RSYNC_OPTS) build/en/ ssh-226270-os@omniscale.de:domains/mapproxy.org/www/
-	rsync $(RSYNC_OPTS) build/de/ ssh-226270-os@omniscale.de:domains/mapproxy.de/
+	rsync $(RSYNC_OPTS) build/en/ os@omniscale.de:/opt/www/mapproxy.org/www/
+	rsync $(RSYNC_OPTS) build/de/ os@omniscale.de:/opt/www/mapproxy.de/
 
