@@ -15,7 +15,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.8.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.8.0/>
 
 ### Python 3
 

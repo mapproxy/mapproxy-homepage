@@ -17,7 +17,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.2.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.2.0/>
 
 
 ## New features
@@ -33,20 +33,20 @@ The directory layout for file based caches is now configurable and you
 can choose a TMS compatible layout besides the default TileCache
 compatible one.
 
-See [cache configuration](http://mapproxy.org/docs/nightly/configuration.html#cache).
+See [cache configuration](https://mapproxy.org/docs/nightly/configuration.html#cache).
 
 #### `mapproxy-util scales` tool
 
 The new `mapproxy-util scales` tool helps to convert between scales
 and resolutions.
 
-See [mapproxy-util documentation](http://mapproxy.org/docs/nightly/mapproxy_util.html#scales).
+See [mapproxy-util documentation](https://mapproxy.org/docs/nightly/mapproxy_util.html#scales).
 
 #### Other features
 
-- Mapnik source now supports the [selection of single layers](http://mapproxy.org/docs/nightly/sources.html#mapnik).
+- Mapnik source now supports the [selection of single layers](https://mapproxy.org/docs/nightly/sources.html#mapnik).
 
-- You can [use MultiMapProxy without Paste Deploy](http://mapproxy.org/docs/nightly/deployment.html#multimapproxy).
+- You can [use MultiMapProxy without Paste Deploy](https://mapproxy.org/docs/nightly/deployment.html#multimapproxy).
 
 
 #### Changelog

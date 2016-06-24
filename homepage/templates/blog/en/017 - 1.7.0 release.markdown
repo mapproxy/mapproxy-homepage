@@ -15,7 +15,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.7.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.7.0/>
 
 ### New features
 
@@ -29,7 +29,7 @@ based on existing WMS services. It reads WMS capabilities documents and creates
 sources and caches for all layers. It's a great way to get started with a new
 service.
 
-See: <http://mapproxy.org/docs/1.7.0/mapproxy_util_autoconfig.html>
+See: <https://mapproxy.org/docs/1.7.0/mapproxy_util_autoconfig.html>
 
 #### Improved error handling in mapproxy-seed
 

@@ -16,7 +16,7 @@ To upgrade within your virtualenv:
 
 Note: The '<=0.8.99' prevents from installing 0.9 when it is released.
 
-Updated documentation is available at: <http://mapproxy.org/docs/0.8.5/>
+Updated documentation is available at: <https://mapproxy.org/docs/0.8.5/>
 
 ### Release information ###
 

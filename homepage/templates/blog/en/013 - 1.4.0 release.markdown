@@ -14,7 +14,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.4.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.4.0/>
 
 ## New features
 
@@ -28,7 +28,7 @@ with the limited_to feature.
 
 ![Request clipping](/static/img/auth_limited_to.png)
 
-See [auth API](http://mapproxy.org/docs/nightly/auth.html#limited-to).
+See [auth API](https://mapproxy.org/docs/nightly/auth.html#limited-to).
 
 ### Demo service
 

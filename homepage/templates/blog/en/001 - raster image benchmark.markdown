@@ -14,7 +14,7 @@ If you are not familiar with [MapProxy][], you should note that it is not a WMS 
 
 In this test we used the MapServer installation as the data source of the MapProxy.
 
-[mapproxy]: http://mapproxy.org
+[mapproxy]: https://mapproxy.org
 
 ## Configuration
 
@@ -49,14 +49,14 @@ Each URL was requested once per test run and each test run was repeated three ti
 
 Ok, here are the results of our benchmark. At first the results for requests in EPSG:4326, the native reference system of the input data/cache:
 
-![Requests per second EPSG:4326](http://mapproxy.org/static/blog/result-4326-req.png)
+![Requests per second EPSG:4326](https://mapproxy.org/static/blog/result-4326-req.png)
 
 MapServer can deliver up to 122 requests per second at 20 and 40 concurrent clients, MapProxy peaks at 40 concurrent clients with 157 requests per second, an increase of ~28%.
 Both servers can hold the performance with increasing concurrency.
 
 And here are the results for requests in EPSG:900913, also known as the web mercator projection EPSG:3785. We used the same EPSG:4326 cache for MapProxy, so both servers need to reproject from EPSG:4326 to EPSG:900913.
 
-![Requests per second EPSG:900913](http://mapproxy.org/static/blog/result-900913-req.png)
+![Requests per second EPSG:900913](https://mapproxy.org/static/blog/result-900913-req.png)
 
 MapServer can deliver up to 74 requests per second from 20 to 150 concurrent clients, MapProxy delivers 113 requests per second from 20 to 80 clients, an increase of ~52%.
 

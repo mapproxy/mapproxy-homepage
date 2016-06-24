@@ -16,7 +16,7 @@ To upgrade within your virtualenv:
 
     $ pip install -U --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.0.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.0.0/>
 
 
 #### Upgrade notes
@@ -49,25 +49,25 @@ It is now possible to reseed specific areas without triggering any cleanup.
 There are also two new ``--summary`` and ``--interactive`` options that help
 to understand what the seed tool will do.
 
-See: <http://mapproxy.org/docs/1.0.0/seed.html>
+See: <https://mapproxy.org/docs/1.0.0/seed.html>
 
 #### FeatureInfo XSL transformations
 
 MapProxy now supports content aware merging of multiple HTML/XML
 feature responses and it supports XSL transformations.
-See:  <http://mapproxy.org/docs/1.0.0/configuration_examples.html#featureinformation>
+See:  <https://mapproxy.org/docs/1.0.0/configuration_examples.html#featureinformation>
 
 #### Image manipulation
 
 You can now make non-transparent layers transparent.
 Either with an opacity value, with blends the layer over the others,
 or with a color value that should be converted to transparent.
-See: <http://mapproxy.org/docs/1.0.0/sources.html#image-transparent-color>
+See: <https://mapproxy.org/docs/1.0.0/sources.html#image-transparent-color>
 
 #### Authentication
 
 There is a new powerful authentication interface.
-See: <http://mapproxy.org/docs/1.0.0/auth.html>
+See: <https://mapproxy.org/docs/1.0.0/auth.html>
 
 
 #### Changelog

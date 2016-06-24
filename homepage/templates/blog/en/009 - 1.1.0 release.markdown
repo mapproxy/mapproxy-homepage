@@ -15,7 +15,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.1.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.1.0/>
 
 MapProxy 1.1.0 is the first version that is released under the [Apache
 Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). This
@@ -31,14 +31,14 @@ There are two new sources that directly integrate Mapserver and Mapnik
 into MapProxy. There is no need to setup an extra WMS server for these map
 services.
 
-See [MapServer source](http://mapproxy.org/docs/1.1.0/sources.html#mapserver-label) and [Mapnik source](http://mapproxy.org/docs/1.1.0/sources.html#mapnik-label) documentation.
+See [MapServer source](https://mapproxy.org/docs/1.1.0/sources.html#mapserver-label) and [Mapnik source](http://mapproxy.org/docs/1.1.0/sources.html#mapnik-label) documentation.
 
 The tile source was extended by the ``arcgiscache_path`` and ``bbox``
 parameters. ``arcgiscache_path`` allows the integration of existing ArcGIS
 tile caches (L09/R05397fb1/C0012d687) and the ``bbox`` parameter is useful
 for WMS-C services that expect a fixed parameter order.
 
-See [tile source documentation](http://mapproxy.org/docs/1.1.0/sources.html#url>).
+See [tile source documentation](https://mapproxy.org/docs/1.1.0/sources.html#url>).
 
 #### Tagged WMS Sources
 
@@ -61,7 +61,7 @@ name with the layers you need.
       sources: ['wms1:lyr3,lyr4']
       grids: [mygrid]
 
-See [WMS documentation](http://mapproxy.org/docs/1.1.0/sources.html#tagged-source-names).
+See [WMS documentation](https://mapproxy.org/docs/1.1.0/sources.html#tagged-source-names).
 
 #### Configurable Image Formats
 
@@ -70,7 +70,7 @@ formats and modify them for each source or cache individually. The
 configuration of paletted PNGs or the JPEG quality is no longer a global
 option.
 
-See [image options](http://mapproxy.org/docs/1.1.0/configuration.html#image-format-options).
+See [image options](https://mapproxy.org/docs/1.1.0/configuration.html#image-format-options).
 
 There is now also support for integer images, e.g. for DEMs.
 
@@ -79,7 +79,7 @@ There is now also support for integer images, e.g. for DEMs.
 There is first support for the OGC WMTS standard. It implements KVP
 requests and can be used with existing caches.
 
-See [WMTS service documentation] (http://mapproxy.org/docs/1.1.0/services.html#web-map-tile-services).
+See [WMTS service documentation] (https://mapproxy.org/docs/1.1.0/services.html#web-map-tile-services).
 
 #### Improved logging
 
@@ -93,7 +93,7 @@ contains the complete URL (easy to copy&paste), the size and the duration
 of the request. The log contains also requests to non-HTTP sources like
 Mapnik or Mapserver.
 
-See [deployment documentation](http://mapproxy.org/docs/1.1.0/deployment.html#logging).
+See [deployment documentation](https://mapproxy.org/docs/1.1.0/deployment.html#logging).
 
 #### Improved configuration loading
 
@@ -121,7 +121,7 @@ running the development server. You can now start a test server with:
 Paster (PasteDeploy/PasteScript) is no longer a requirement, but it is
 still supported.
 
-See [deployment documentation](http://mapproxy.org/docs/1.1.0/deployment.html).
+See [deployment documentation](https://mapproxy.org/docs/1.1.0/deployment.html).
 
 
 #### Changelog

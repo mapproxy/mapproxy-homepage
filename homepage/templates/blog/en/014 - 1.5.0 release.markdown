@@ -16,7 +16,7 @@ To upgrade within your virtualenv:
 
     $ pip install --upgrade --no-deps MapProxy
 
-Updated documentation is available at: <http://mapproxy.org/docs/1.5.0/>
+Updated documentation is available at: <https://mapproxy.org/docs/1.5.0/>
 
 ## New features
 
@@ -28,7 +28,7 @@ Some noteworthy improvements since 1.4.0 are:
 The security API now also supports limiting requests to polygon geometries
 for all tile services.
 
-See: <http://mapproxy.org/docs/1.5.0/auth.html#limited-to>
+See: <https://mapproxy.org/docs/1.5.0/auth.html#limited-to>
 
 
 #### Mixed image mode
@@ -38,7 +38,7 @@ depending if the image has transparency or not. This is a great feature
 for aerial images with transparency at the image boundaries. Thanks to
 Thomas Bonfort for the idea.
 
-See: <http://mapproxy.org/docs/1.5.0/configuration.html#format>
+See: <https://mapproxy.org/docs/1.5.0/configuration.html#format>
 
 #### Caches as source for other caches
 
@@ -46,14 +46,14 @@ You can now use a cache as a source for another cache. You can use this
 to directly reproject tiles or to make changes to your grid configuration
 without losing your existing cache.
 
-See: <http://mapproxy.org/docs/1.5.0/configuration_examples.html#using-existing-caches>
-and <http://mapproxy.org/docs/1.5.0/configuration_examples.html#reprojecting-tiles>
+See: <https://mapproxy.org/docs/1.5.0/configuration_examples.html#using-existing-caches>
+and <https://mapproxy.org/docs/1.5.0/configuration_examples.html#reprojecting-tiles>
 
 #### Changed default SRS in WMS
 
 The WMS now supports EPSG:3857, the official EPSG code of the Webmercator projection (EPSG:900913).
 UTM 32/33N and Gauß-Krüger zones 3-5 were removed from the default list, since they are only usable in parts of Europe.
-Make sure you've [configured all SRS you are using](http://mapproxy.org/docs/1.5.0/services.html#srs) in the service configuration.
+Make sure you've [configured all SRS you are using](https://mapproxy.org/docs/1.5.0/services.html#srs) in the service configuration.
 
 #### New tools
 
@@ -63,7 +63,7 @@ There are three new tools:
 - `mapproxy-util wms-capabilities`: get bbox and min/max_scales of existing WMS
 - `mapproxy-util export`: export (parts) of your cache to MBTiles or a TMS directory
 
-See: <http://mapproxy.org/docs/1.5.0/mapproxy_util.html>
+See: <https://mapproxy.org/docs/1.5.0/mapproxy_util.html>
 
 
 #### Other features

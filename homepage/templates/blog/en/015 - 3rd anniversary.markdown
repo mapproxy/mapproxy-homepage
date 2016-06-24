@@ -11,13 +11,13 @@ Today we are celebrating the third anniversary of MapProxy.
 
 MapProxy grew from a simple tile server with WMS support to a powerful and flexible proxy for maps. Features like the security API, the ability to reproject tiles, support for coverages from Shapefiles or PostGIS and the various tools are just a few things that we couldn't have imagined to have in MapProxy when we were thinking about the future of MapProxy three years ago.
 
-You will get an impression of the development by comparing the [configuration options from the first open source release](http://mapproxy.org/docs/0.8.0/) to the [latest version](http://mapproxy.org/docs/latest/).
+You will get an impression of the development by comparing the [configuration options from the first open source release](https://mapproxy.org/docs/0.8.0/) to the [latest version](http://mapproxy.org/docs/latest/).
 
 With open source it is hard to tell how many users MapProxy gained in this time, but we do know that it is now used in countless projects – by federal or state agencies and institutions, by universities, students and hobbyists, by small, national and international companies – all around the world.
 We also know that there are 200 subscribers on the mailing list and that we get hundreds of downloads each month.
 
 
-While most of the development, support and release management was made by [Omniscale](http://omniscale.com), all this would not have been possible without the support from various companies and institutions who funded large parts of the development of MapProxy.
+While most of the development, support and release management was made by [Omniscale](https://omniscale.com), all this would not have been possible without the support from various companies and institutions who funded large parts of the development of MapProxy.
 
 We would like to thank:
 
