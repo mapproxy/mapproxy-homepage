@@ -1,0 +1,36 @@
+
+---
+tags: release, mapproxy
+date: 2016/07/22 12:00:00
+format: markdown
+title: New MapProxy 1.9.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.9.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <https://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <https://mapproxy.org/docs/1.9.0/>
+
+### Support for ArcGIS REST services
+
+You can now directly integrate ArcGIS services without the need to enable WMS support.
+
+See: <https://mapproxy.org/docs/1.9.0/sources.html#arcgis-label>
+
+### Band merging
+
+The new band merge feature allows you to create false-color or grayscale images on the fly, by selecting different sources for each (color) band.
+
+See <https://mapproxy.org/docs/1.9.0/configuration.html#band-merging>
+ and <https://mapproxy.org/docs/1.9.0/configuration_examples.html#create-grayscale-images>
+
+### Other fixes and changes
+
+There are many more changes and improvements.
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.9.0/CHANGES.txt>
