@@ -8,7 +8,7 @@ WMS- & Kachelproxy
 <div class="row top-buffer-1">
   <div class="col-md-7">
     {{ heading('MapProxy')}}
-    <p>Die Open-Source-Software MapProxy ist ein WMS- & Kachel-Proxy mit der Kartendienste, durch Vorgenerieren und Zwischenspeichern, beschleunigt und optimiert werden können.</p>
+    <p>Die Open-Source-Software MapProxy ist ein WMS- &amp; Kachel-Proxy mit der Kartendienste, durch Vorgenerieren und Zwischenspeichern, beschleunigt und optimiert werden können.</p>
   </div>
 </div>
 
@@ -42,18 +42,19 @@ WMS- & Kachelproxy
 
     <ul>
       <li>WMS 1.0.0–1.3.0 (MapServer, GeoServer, etc.)</li>
-      <li>TMS, WMTS (TileCache, GeoWebcache, etc.)</li>
+      <li>WMTS, TMS(TileCache, GeoWebcache, etc.)</li>
       <li>Mapserver und Mapnik (direkt, ohne WMS)</li>
       <li>jeder TileCache, Google Maps oder mit Bing kompatible Quellen</li>
     </ul>
     <h5>Weitere Funktionen:</h5>
     <ul>
-      <li>speichern der Kacheln im Dateisystem, in MBTiles-Dateien oder in CouchDB</li>
+      <li>speichern der Kacheln im Dateisystem, in MBTiles/SQLite, ArcGIS Compact Cache, S3, Riak, Redis oder CouchDB</li>
       <li>einheitliche Bilder werden nur einmalig gespeichert (z.B. blaue Wasserkacheln)</li>
       <li>hinzufügen von Wasserzeichen</li>
-      <li>umtransformieren in andere Projektionen</li>
+      <li>umtransformieren von WMS und Kacheln in andere Projektionen</li>
       <li>zusammenfassen von mehrere Quellen zu einem Dienst</li>
       <li>beschränken von Quellen über eine Geometrie (z.B. durch ein Shapefile)</li>
+      <li>manipulation von Farbkanälen zur Erzeugung von Graustufen-, oder Falschfarbenbilder</li>
       <li>und vieles mehr...</li>
     </ul>
 
@@ -153,7 +154,7 @@ WMS- & Kachelproxy
     <p>Ansclhießend können Sie das Ergebnis unter http://localhost:8080/ aufrufen.</p>
 
     <pre><code>sudo aptitude install python-imaging python-yaml libproj0
-sudo easy_install mapproxy
+sudo pip install mapproxy
 mapproxy-util create -t base-config ./
 mapproxy-util serve-develop ./mapproxy.yaml</pre></code>
   </div>

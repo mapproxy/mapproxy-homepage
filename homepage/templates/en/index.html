@@ -45,18 +45,19 @@
 
     <ul>
       <li>WMS sources (1.0.0–1.3.0)</li>
-      <li>TMS/WMTS sources</li>
+      <li>WMTS/TMS sources</li>
       <li>Mapserver and Mapnik configurations</li>
       <li>any TileCache, Google Maps or Bing compatible source</li>
     </ul>
     <h5>Other features:</h5>
     <ul>
-<li>cache data on filesystem, as MBTiles or inside CouchDB</li>
-<li>reproject WMS sources to other SRS</li>
-<li>stores identical images just once (e.g. ocean tiles)</li>
+<li>cache tiles in the filesystem, MBTiles/SQLite, ArcGIS Compact Cache, S3, Redis, Riak, or CouchDB</li>
+<li>reproject WMS and tile sources to other SRS</li>
+<li>stores identical tiles just once (e.g. ocean tiles)</li>
 <li>embed watermark in tiles</li>
 <li>merge multiple sources</li>
 <li>limit sources to polygon areas</li>
+<li>manipulate image bands to create grayscale- or false-color images</li>
 <li>many more</li>
 
     </ul>
@@ -117,7 +118,7 @@
     <p>You can pre-generate the tile cache for better performance – this is called seeding. Some unique features:</p>
 
     <ul>
-      <li>fine-grained control over the seed area with Shapefiles, PostGIS or WKT geometries</li>
+      <li>fine-grained control over the seed area with Shapefiles, GeoJSON, PostGIS or WKT geometries</li>
     <li>multi-threaded requests, meta-tile splitting and image encoding</li>
     <li>optimized seeding strategy (to work _with_ your database cache)</li>
     </ul>
@@ -156,7 +157,7 @@
     <p>Curious? With the following four lines you can install MapProxy and all dependencies, create a new configuration and start MapProxy in development mode. </p>
     <p>After that you can visit <http://localhost:8080/>.</p>
     <pre><code>sudo aptitude install python-imaging python-yaml libproj0
-sudo easy_install mapproxy
+sudo pip install mapproxy
 mapproxy-util create -t base-config ./
 mapproxy-util serve-develop ./mapproxy.yaml</pre></code>
   </div>
