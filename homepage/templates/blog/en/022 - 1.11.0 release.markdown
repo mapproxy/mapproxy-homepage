@@ -1,0 +1,45 @@
+
+---
+tags: release, mapproxy
+date: 2017/11/20 14:00:00
+format: markdown
+title: New MapProxy 1.11.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.11.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <https://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <https://mapproxy.org/docs/1.11.0/>
+
+### Improved support for ArcGIS compact caches
+
+MapProxy now also supports version 2 of the ArcGIS compact cache format. The performance for version 1 was improved as well.
+
+The new tool ``mapproxy-util defrag`` can be used to reduce the size of compact cache bundle safter tiles were removed/updated.
+
+See: <https://mapproxy.org/docs/1.11.0/caches.html#compact> and <https://mapproxy.org/docs/1.11.0/mapproxy_util.html#defrag-compact-cache>
+
+### Improved reprojection
+
+The accuracy for reprojections on low map scales improved while the performance improved for mid to high map scales.
+
+
+### Improved HTTPS handling
+
+MapProxy now uses CA certificates provided by your system if you use Python >=2.7.9 or >=3.4.
+The ``ssl_no_cert_checks`` option was broken with these Python versions. This is now fixed. 
+The ``ssl_ca_certs`` option is still available for older systems, or for custom CA certificates.
+
+See: <https://mapproxy.org/docs/1.11.0/configuration.html#secure-http-connections-https>
+
+### Other fixes and changes
+
+There are a lot more changes and improvements. Please note that Python 2.6 is no longer supported.
+
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.11.0/CHANGES.txt>
