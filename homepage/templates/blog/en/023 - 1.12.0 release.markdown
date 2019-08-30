@@ -1,0 +1,37 @@
+
+---
+tags: release, mapproxy
+date: 2019/08/30 11:00:00
+format: markdown
+title: New MapProxy 1.12.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.12.0. It
+contains a lot of major and minor improvements.
+
+The latest release is available at: <https://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <https://mapproxy.org/docs/1.12.0/>
+
+### Rescale existing tiles
+
+MapProxy is now able to create missing tiles by rescaling tiles from zoom levels below or above.
+
+See: <https://mapproxy.org/docs/1.12.0/configuration.html#upscale-tiles-and-downscale-tiles>
+
+### Improved WMS TIFF output
+
+MapProxy now georeferences all (Geo)TIFF WMS responses. TIFF images can be compressed with LZW or JPEG. `jpeg_quality` option is also supported for JPEG compressed TIFF files.
+
+See: <https://mapproxy.org/docs/latest/configuration.html#options>
+
+### Other fixes and changes
+
+There are a lot more changes and improvements, especially regarding Python 3.6 and 3.7 compatibility.
+Please note that Python 2.6 is no longer supported since MapProxy 1.11.0.
+
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.12.0/CHANGES.txt>
