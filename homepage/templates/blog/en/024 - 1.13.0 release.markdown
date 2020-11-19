@@ -1,0 +1,32 @@
+
+---
+tags: release, mapproxy
+date: 2020/11/19 11:00:00
+format: markdown
+title: New MapProxy 1.13.0 release
+---
+
+We are pleased to announce the release of MapProxy 1.13.0.
+
+The latest release is available at: <https://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <https://mapproxy.org/docs/1.13.0/>
+
+### Some of the improvements
+
+MapProxy is now able to use the latest PROJ releases via pyproj.
+
+You can hide the source URLs in WMS exceptions with the new `globals.http.hide_exception_url` option.
+
+Tile sources can contain `@` characters in the path of the URL (e.g. for HiDPI tile URLs like /0/0/0@2x.png).
+
+
+### Other fixes and changes
+
+There are a lot more changes and improvements, especially regarding Python 3.8 compatibility.
+
+For a complete list of see: <http://github.com/mapproxy/mapproxy/blob/1.13.0/CHANGES.txt>
