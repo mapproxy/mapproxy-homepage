@@ -1,5 +1,4 @@
-
-RSYNC_OPTS = -a -v -P --delete-after
+RSYNC_OPTS = -a -v -P
 
 all:
 	@echo "main command:"
