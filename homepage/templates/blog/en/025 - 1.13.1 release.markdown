@@ -1,0 +1,25 @@
+
+---
+tags: release, mapproxy
+date: 2021/07/13 12:00:00
+format: markdown
+title: New MapProxy 1.13.1 release
+---
+
+We are pleased to announce the release of MapProxy 1.13.1.
+
+The latest release is available at: <https://pypi.python.org/pypi/MapProxy>
+
+To upgrade within your virtualenv:
+
+    $ pip install --upgrade --no-deps MapProxy
+
+Updated documentation is available at: <https://mapproxy.org/docs/1.13.1/>
+
+### Improvements
+
+Support cookie management for HTTP sources.
+
+### Fixes and changes
+
+Security fix for local file disclosure (#526).
