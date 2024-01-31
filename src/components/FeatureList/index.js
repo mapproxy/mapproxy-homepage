@@ -82,7 +82,7 @@ const FeatureList = [
         items: [
           'fine-grained control over the seed area with Shapefiles, GeoJSON, PostGIS or WKT geometries',
           'multi-threaded requests, meta-tile splitting and image encoding',
-          'optimized seeding strategy (to work _with_ your database cache)'
+          'optimized seeding strategy'
         ]
       }
     ]

@@ -53,7 +53,7 @@ export const features = [
       {
         descriptions: [<Translate>It also supports combinations of cached and cascaded layers. Other features:</Translate>],
         items: [
-          <Translate>respond to GetLegendGraphic requests'</Translate>,
+          <Translate>respond to GetLegendGraphic requests</Translate>,
           <Translate>cascade GetFeatureInfo requests with optional XSL transformations'</Translate>,
           <Translate>limit sources to polygon areas'</Translate>,
           <Translate>convert WMS versions and image formats'</Translate>,
