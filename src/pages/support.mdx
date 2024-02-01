@@ -1,0 +1,34 @@
+import CommercialSuppport from '../components/CommercialSupport/index.tsx';
+import {companies} from '../data/_supportCompanies.js';
+
+If you need help setting up MapProxy, having some trouble or found a bug? There are different ways to get help:
+
+#### Mailing List
+
+The [OSGeo](http://osgeo.org/) is hosting our mailing list: [mapproxy@lists.osgeo.org](http://lists.osgeo.org/mailman/listinfo/mapproxy)
+
+The list is for users and developers and is the best place to discuss MapProxy. You must [subscribe to the list](http://lists.osgeo.org/mailman/listinfo/mapproxy) before you can write. There is an [archive](http://lists.osgeo.org/pipermail/mapproxy/) of all older posts.
+
+### How to ask for help?
+
+There are a few things you should consider when asking for help on github or the mailing list, that will make it more likely to get a fast *and* helpful response.
+
+*   Describe what you're trying to do and what your end result should be. It's possible that there is an easier way to do something.
+*   Always include a minimal configuration to reproduce your setup – including all grids, caches, sources and layers. But remove all unrelated parts, e.g. when you have multiple sources/caches/layers.
+*   Describe what you are expecting and what you get. Include URLs you are requesting from MapProxy and URLs of requests that MapProxy makes to your source.
+*   Describe what you already tried to do.
+*   Include the software versions of your setup (MapProxy, Windows/Linux, Proj4, PIL, etc.).
+*   Try to see if it works with `mapproxy-util serve-develop` if your issue is not related to the deployment itself. Copy any error output in your mail.
+*   Always include a *minimal* configuration to reproduce your setup.
+*   There is a hard limit of 100kB per mail on the mailing list. Avoid HTML, only post tiny pictures and/or use external webspace (or Dropbox) for larger stuff.
+*   Use these guidelines with common sense. For example, we don't need your OpenLayers configuration when MapProxy doesn't start up.
+
+#### Commercial Support
+
+<CommercialSuppport
+  companyList={companies}
+/>
+
+#### Issue Tracker
+
+Found a bug? We have an [issue tracker](https://github.com/mapproxy/mapproxy/issues) for that, where you can create new tickets. See [development](/development).

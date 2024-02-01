@@ -1,0 +1,15 @@
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  gap: 5%;
+  div:nth-child(1) {
+    flex: 1
+  }
+  div:nth-child(2) {
+    flex: 4
+  }
+}
+
+

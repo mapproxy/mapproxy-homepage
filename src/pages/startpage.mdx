@@ -1,0 +1,28 @@
+import clsx from 'clsx';
+import Carousel from '../components/Carousel/index.tsx';
+import {features} from '../data/_features.js';
+
+<!-- overview chart of a MapProxy environment -->
+<div class="flex-center">
+    <img src="img/mapproxy-overview.png" alt="MapProxy Overview" />
+</div>
+
+---
+
+# Features
+
+<!-- Carousel component will render feature list -->
+<Carousel slides={features} />
+
+---
+
+## Getting started
+Curious? With the following four lines you can install MapProxy and all dependencies, create a new configuration and start MapProxy in development mode.  
+After that you can visit [http://localhost:8080](http://localhost:8080).
+
+```
+    sudo aptitude install python-imaging python-yaml libproj0
+    sudo pip install mapproxy
+    mapproxy-util create -t base-config ./
+    mapproxy-util serve-develop ./mapproxy.yaml
+```
