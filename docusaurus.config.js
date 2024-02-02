@@ -11,7 +11,7 @@ const config = {
   title: 'MapProxy',
   tagline: 'Speed up your map services',
   url: 'https://mapproxy.org',
-  baseUrl: '/mapproxy-homepage/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
