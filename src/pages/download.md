@@ -10,11 +10,11 @@ There are several ready-to-use docker images for development/testing and product
 
 ## Releases
 
-2.x is the current mainline of the development. All new features will be included in the next 2.x release (2.1.x, 2.2.x, etc.). We will make minor releases (e.g. 2.2.1) with small improvements and bugfixes as necessary.
+3.x is the current mainline of the development. All new features will be included in the next 3.x release (3.1.x, 3.2.x, etc.). We will make minor releases (e.g. 3.2.1) with small improvements and bugfixes as necessary.
 
 For changes between each release see the [CHANGES.txt of MapProxy](https://github.com/mapproxy/mapproxy/blob/master/CHANGES.txt).
 
-### 2.0.x
+### 3.0.x
 
 This is the current release. It is released under the [Apache Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
@@ -23,9 +23,9 @@ To install the latest release:
     pip install MapProxy
 
 ### Previous releases
-You can install previous releases with pip if you specify the version with the package name. For example, to install MapProxy 1.1.1:
+You can install previous releases with pip if you specify the version with the package name. For example, to install MapProxy 2.2.0:
 
-    pip install `MapProxy==1.1.1`
+    pip install `MapProxy==2.2.0`
 
 To install the latest version of the 1.2.x release, but not 1.3 or newer:
 
