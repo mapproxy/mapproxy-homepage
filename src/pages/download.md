@@ -10,13 +10,11 @@ There are several ready-to-use docker images for development/testing and product
 
 ## Releases
 
-3.x is the current mainline of the development. All new features will be included in the next 3.x release (3.1.x, 3.2.x, etc.). We will make minor releases (e.g. 3.2.1) with small improvements and bugfixes as necessary.
+We are now using semver (https://semver.org/) for the relases, which means that major breaking changes will lead to a new main version number (e.g. 5.x.x), minor updates (e.g. x.2.x) and patches (e.g. x.x.4) accordingly 
 
 For changes between each release see the [CHANGES.txt of MapProxy](https://github.com/mapproxy/mapproxy/blob/master/CHANGES.txt).
 
-### 3.0.x
-
-This is the current release. It is released under the [Apache Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
+MapProxy is released under the [Apache Software License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).
 
 To install the latest release:
 
