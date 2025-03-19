@@ -29,4 +29,4 @@ You can post patches to the mailing list or create a new ticket. Or better, [cre
 
 #### More information
 
-There is a [whole chapter about development in the documentation](https://mapproxy.github.io/mapproxy/development.html). It covers most aspects of the MapProxy development including the source code, documentation, tests, etc.
+There is a [whole chapter about development in the documentation](https://mapproxy.github.io/mapproxy/latest/development.html). It covers most aspects of the MapProxy development including the source code, documentation, tests, etc.
